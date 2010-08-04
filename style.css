@@ -1,0 +1,72 @@
+/*
+Theme Name: GV Advocacy Child Theme
+Theme URI: http://advocacy.globalvoicesonline.org/
+Description: Child theme for the generic gv-project-theme for Advocacy.
+Version: 0.1
+Author: Erik Gyepes and Jeremy Clarke
+Author URI: http://globalvoicesonline.org/
+Template: gv-project-theme
+
+*/
+
+@import url("../gv-project-theme/style.css");
+#DARK-RED-TEXT,
+a,
+h3 a,
+#sidebar a:hover,
+#page-navigation a:hover {
+	color: #9d0106;
+	}
+#MEDIUM-RED-TEXT,
+#sidebar a,
+#page-navigation a,
+a:hover,
+.edit a,
+#comments .edit a,
+#cancel-comment-reply-link,
+.warning a   {
+	color: #c80005;
+	}
+
+#LIGHT-RED-TEXT,
+.error,
+.edit a:hover,
+#comments .edit a:hover,
+#cancel-comment-reply-link:hover,
+.warning a:hover {
+	color: #d90202;
+	}
+#LIGHT-RED-BACKGROUND,
+a .avatar:hover,
+a .post-thumbnail:hover {
+	background-color: #fcb7b7;
+	border-color: #d90202; 
+	}
+#RED-TEXT-SHADOW,
+#header-menu a, 
+.sidebar h2 {
+	text-shadow: 1px 1px 2px #891818;
+	}
+
+#RED-3D-HEADING,
+#sidebar h2 {
+	background: #c80005 url(images/red-gradient-vertical.gif) ;
+	border-color: #c80005;
+	}
+	
+#container {
+	background: url("images/header-bg-greymap.gif") 200px 0 repeat-x;
+	height: 164px;
+}
+
+/*MAKE HEADER SHORTER BUT WITH PADDING
+FOR ADVOCACY TITLE WHICH IS NOT AS TALL AS 
+HEADER*/
+#header {
+	height: 103px;
+	padding-top: 15px;
+	}
+#header img#logo {
+	
+	}	
+
