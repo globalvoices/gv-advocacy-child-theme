@@ -2,14 +2,13 @@
 /**
  * Functions.php file for GV Advocacy Child Theme
  *
- * Assumes parent is gv-project-theme. 
+ * Assumes parent is gv-project-theme.
  * This code will run before the functions.php in that theme.
  */
 
 if (is_object($gv)) :
 	// Special map directory for gmapez
 	$gv->dir['map'] = "/wp-content/map/";
-
 
 	/**
 	 * Define an image to show in the header.
@@ -26,7 +25,6 @@ if (is_object($gv)) :
 		'special' => 1,
 		'type' => 1,
 	);
-
 
 	/**
 	 * Define the hierarchical
@@ -56,27 +54,6 @@ if (is_object($gv)) :
 			"slug" => "hivos",
 			"description" => 'Hivos, the Humanist Institute for Development Cooperation',
 			"url" => "http://www.hivos.org/",
-			"status" => 'featured',
-			),
-		'osi' => array(
-			"name" => "Open Society Institute",
-			"slug" => "osi",
-			"description" => 'Open Society Institute - Building vibrant and tolerant democracies.',
-			"url" => "http://www.soros.org/",
-			"status" => 'featured',
-			),
-		'mccormick' => array(
-			"name" => "McCormick Foundation",
-			"slug" => "mccormick",
-			"description" => 'McCormick Foundation - Advancing the ideals of a free, democratic society by investing in children, communities and country.',
-			"url" => "http://www.mccormickfoundation.org/",
-			"status" => 'featured',
-			),
-		'heinrichboll' => array(
-			"name" => "Heinrich Böll Stiftung",
-			"slug" => "heinrichboll",
-			"description" => 'Heinrich Böll Stiftung - Striving to promote democracy, civil society, equality and a healthy environment internationally.',
-			"url" => "http://www.boell.org/",
 			"status" => 'featured',
 			),
 	);
@@ -113,7 +90,7 @@ if (is_object($gv)) :
 //			'parent' => gv_slug2cat('languages')
 //		),
 //	);
-	
+
 endif; // is_object($gv)
 
 ?>
