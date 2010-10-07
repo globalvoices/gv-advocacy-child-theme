@@ -27,7 +27,10 @@ if (is_object($gv)) :
 	);
 
 	/**
-	 * Define the hierarchical
+	 * Define Categories to be inserted into post data before returning content for translation during fetch
+	 * @see gv_lingua::reply_to_ping()
+	 */
+	$gv->lingua_site_categories[] = 'gv-advocacy';
 
 	/**
 	 *  Define the order of importance of the taxonomies (all taxonomy slugs should work...)
