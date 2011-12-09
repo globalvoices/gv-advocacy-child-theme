@@ -47,7 +47,11 @@ if (is_object($gv)) :
 		'feature' => array('title' => 'feature'),
 	    );
 
-
+	/**
+	 * Set a custom site description using a lingua string. To be used in social media sharing etc.
+	 */
+	$gv->site_description = "A project of Global Voices Online, we seek to build a global anti-censorship network of bloggers and online activists dedicated to protecting freedom of expression and free access to information online.";
+	
 	/**
 	 * Sponsors definition to be used by gv_get_sponsors()
 	 */
