@@ -17,6 +17,17 @@ if (is_object($gv)) :
 	$gv->settings['header_img'] = get_bloginfo('template_url') . '/images/advocacy-temptitle2.png';
 
 	/**
+	 * Filter the apple touch icon to be an RV logo
+	 * 
+	 * @param string $icon Default icon
+	 * @return string desired icon
+	 */
+	function gvadvocacy_theme_gv_apple_touch_icon($icon) {
+		return gv_get_dir('theme_images') ."gv-advocacy-apple-touch-icon-precomposed-300.png";
+	}
+	add_filter('gv_apple_touch_icon', 'gvadvocacy_theme_gv_apple_touch_icon');
+		
+	/**
 	 * Define the hierarchical structure of the taxonomy by its parents
 	 */
 	$gv->taxonomy_outline = array(
