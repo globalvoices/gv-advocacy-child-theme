@@ -86,23 +86,19 @@ a .post-thumbnail:hover {
 
 #RED-3D-HEADING,
 #sidebar h2 {
-	background: #c80005 url(images/red-gradient-vertical.gif) ;
-	border-color: #c80005;
+/*	background: #c80005 url(images/red-gradient-vertical.gif) ;
+	border-color: #c80005;*/
 	}
-	
-#container {
-	background: url("images/header-bg-greymap.gif") 200px 0 repeat-x;
-	height: 164px;
+
+
+.site-title-container {
+	margin-bottom: 0;
+	width: 31%;
 }
-
-/*MAKE HEADER SHORTER BUT WITH PADDING
-FOR ADVOCACY TITLE WHICH IS NOT AS TALL AS 
-HEADER*/
-#header {
-	height: 103px;
-	padding-top: 15px;
-	}
-#header img#logo {
-	
-	}	
-
+.header-mission-statement-container {
+	width: 61%;
+}
+.site-title, 
+.header-mission-statement .widget {
+	height: 125px;
+}
