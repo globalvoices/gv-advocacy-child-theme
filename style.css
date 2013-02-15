@@ -15,6 +15,7 @@ Template: gv-project-theme
 .header-menu-container,
 #sidebar h2,
 .foot-container,
+.call-to-action .widget-contents,
 .medium-red-gradient {
 /*http://css-tricks.com/examples/CSS3Gradient/*/
 	background-color: #E40005;
@@ -36,6 +37,8 @@ Template: gv-project-theme
 #TEXT-SHADOW-MEDIUM-RED,
 #header-menu,
 #header-menu a,
+.call-to-action .widget-contents,
+.call-to-action .widget-contents a,
 .sidebar h2,
 #sidebar h2 a,
 .foot-container h2,
@@ -43,9 +46,14 @@ Template: gv-project-theme
 .foot-container a, 
 .text-shadow-medium-red {
 	color: #fff;
-	text-shadow: 1px 1px 2px rgb(90, 114, 43);
+	text-shadow: 1px 1px 2px #990A0D;
 	}
-
+#TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
+.call-to-action .widget-contents a.button,
+.text-shadow-medium-grey-background {
+	color: #333;
+	text-shadow: none;
+	}
 #DARK-RED-TEXT,
 a,
 h3 a,
@@ -90,15 +98,33 @@ a .post-thumbnail:hover {
 	border-color: #c80005;*/
 	}
 
+/*Special styles*/
+#CAPS-ALL-THE-HEADINGS, 
+h1, h2, h3, h4, h5, h6, 
+big,
+.menu li,
+.call-to-action,
+.caps-all-the-headings {
+	text-transform: uppercase;
+}
 
+/*Adjust header sizing for smaller than 50% logo*/
 .site-title-container {
 	margin-bottom: 0;
-	width: 31%;
+	width: 33%;
 }
 .header-mission-statement-container {
-	width: 61%;
+	width: 58%;
 }
 .site-title, 
 .header-mission-statement .widget {
 	height: 125px;
+}
+
+/*Call to action aggressive links*/
+.call-to-action a {
+	float: right;
+}
+.call-to-action li {
+	clear: both;
 }
