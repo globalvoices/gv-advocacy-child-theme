@@ -10,6 +10,42 @@ Template: gv-project-theme
 */
 
 @import url("../gv-project-theme/style.css");
+
+#MEDIUM-RED-GRADIENT,
+.header-menu-container,
+#sidebar h2,
+.foot-container,
+.medium-red-gradient {
+/*http://css-tricks.com/examples/CSS3Gradient/*/
+	background-color: #E40005;
+	border-color: #BD0207;
+	border-width: 1px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EC060C), to(#c80005)); /* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #E40005, #BD0207); /* Safari 5.1, Chrome 10+ */
+	background: -moz-linear-gradient(top, #E40005, #BD0207); /* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #E40005, #BD0207); /* IE 10 */
+	background: -o-linear-gradient(top, #E40005, #BD0207); /* Opera 11.10+ */
+}
+#MEDIUM-RED-HIGHLIGHT-BORDER,
+.header-menu li,
+.header-menu-container input,
+.medium-red-hightlight-border {
+	/* Lightest shade of green from medium-green-gradient*/
+	border-color: #E40005;
+}
+#TEXT-SHADOW-MEDIUM-RED,
+#header-menu,
+#header-menu a,
+.sidebar h2,
+#sidebar h2 a,
+.foot-container h2,
+.foot-container h2 a,
+.foot-container a, 
+.text-shadow-medium-red {
+	color: #fff;
+	text-shadow: 1px 1px 2px rgb(90, 114, 43);
+	}
+
 #DARK-RED-TEXT,
 a,
 h3 a,
