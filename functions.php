@@ -107,6 +107,21 @@ if (is_object($gv)) :
 		return $limit;
 	}
 	add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
+
+	/**
+	 * Filter gv_post_archive_truncate_count limit to show more posts on homepage
+	 * @param type $limit
+	 * @param type $args
+	 * @return int
+	 */
+	function gv_advox_filter_post_archive_truncate_count($truncate_count) {
+		// Only set limit if we're on inline format
+		if (is_home())
+			return 5;
+		
+		return $truncate_count;
+	}
+	add_filter('gv_post_archive_truncate_count', 'gv_advox_filter_post_archive_truncate_count', 10);
 	
 	/**
 	 * Define special categories as content types and the conditions in which to segregate them
