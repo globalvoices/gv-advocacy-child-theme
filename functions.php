@@ -114,14 +114,10 @@ if (is_object($gv)) :
 	 * @param type $args
 	 * @return int
 	 */
-	function gv_advox_filter_post_archive_truncate_count($truncate_count) {
-		// Only set limit if we're on inline format
-		if (is_home())
-			return 5;
-		
-		return $truncate_count;
+	function gv_advox_gv_project_theme_home_truncate_count($truncate_count) {
+		return 4;
 	}
-	add_filter('gv_post_archive_truncate_count', 'gv_advox_filter_post_archive_truncate_count', 10);
+	add_filter('gv_project_theme_home_truncate_count', 'gv_advox_gv_project_theme_home_truncate_count', 10);
 	
 	/**
 	 * Define special categories as content types and the conditions in which to segregate them
