@@ -49,6 +49,66 @@ if (is_object($gv)) :
 	$gv->taxonomy_priority = array ('countries', 'special', 'topics', 'type');
 
 	/**
+	 * Register "public taxonomies" for gv_taxonomies system to display automatically on posts
+	 * 
+	 * Should completely replace old backbone/taxonomy_priority system eventually
+	 */
+	function gv_advox_register_taxonomies($param) {
+
+		// Unregister defaults as they aren't useful for this site
+		gv_unregister_public_taxonomy('category');
+		gv_unregister_public_taxonomy('post_tag');
+
+		// Register REGIONS as terms with parent regions-countries
+		$countries_category_id = gv_slug2cat('regions-countries');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'regions',
+			'taxonomy' => 'category',
+			'parent' => $countries_category_id,
+		));
+
+		// Register SPECIAL as terms with parent SPECIAL
+		$special_category_id = gv_slug2cat('special');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'special',
+			'taxonomy' => 'category',
+			'parent' => $special_category_id,
+		));
+		
+		// Register TOPICS as terms with parent TOPICS
+		$topics_category_id = gv_slug2cat('topics');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'topics',
+			'taxonomy' => 'category',
+			'parent' => $topics_category_id,
+		));
+
+		// Register TYPE as terms with parent TYPE
+		$type_category_id = gv_slug2cat('type');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'type',
+			'taxonomy' => 'category',
+			'parent' => $type_category_id,
+		));
+	}
+	add_action('init', 'gv_advox_register_taxonomies');
+
+	/**
+	 * Filter gv_display_post_terms limit so we only ever show 1 term
+	 * @param type $limit
+	 * @param type $args
+	 * @return int
+	 */
+	function gv_news_filter_display_post_terms_limit($limit, $args) {
+		// Only set limit if we're on inline format
+		if ('inline' == $args['format'])
+			return 1;
+		
+		return $limit;
+	}
+	add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
+	
+	/**
 	 * Define special categories as content types and the conditions in which to segregate them
 	 * Used by gv_get_segregated_categories() and gv_
 	 * segregation_conditions apply to primary content only. sidebar headlines etc assume segregation
