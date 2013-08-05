@@ -15,7 +15,6 @@ Template: gv-project-theme
 .header-menu-container,
 #sidebar h2,
 .foot-container,
-.call-to-action .widget-contents,
 .medium-red-gradient {
 /*http://css-tricks.com/examples/CSS3Gradient/*/
 /*	background-color: #E40005;
@@ -43,8 +42,6 @@ Template: gv-project-theme
 #TEXT-SHADOW-MEDIUM-RED,
 #header-menu,
 #header-menu a,
-.call-to-action .widget-contents,
-.call-to-action .widget-contents a,
 .sidebar h2,
 #sidebar h2 a,
 .foot-container h2,
@@ -55,7 +52,6 @@ Template: gv-project-theme
 	text-shadow: 1px 1px 2px #990A0D;
 	}
 #TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
-.call-to-action .widget-contents a.button,
 .text-shadow-medium-grey-background {
 	color: #333;
 	text-shadow: none;
@@ -108,7 +104,6 @@ a .post-thumbnail:hover {
 h1, h2, h3, h4, h5, h6, 
 big,
 .menu li,
-.call-to-action,
 .headline-title,
 .caps-all-the-headings {
 	/*text-transform: uppercase;*/
