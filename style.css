@@ -18,14 +18,20 @@ Template: gv-project-theme
 .call-to-action .widget-contents,
 .medium-red-gradient {
 /*http://css-tricks.com/examples/CSS3Gradient/*/
-	background-color: #E40005;
+/*	background-color: #E40005;
 	border-color: #BD0207;
 	border-width: 1px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EC060C), to(#c80005)); /* Safari 4-5, Chrome 1-9 */
-	background: -webkit-linear-gradient(top, #E40005, #BD0207); /* Safari 5.1, Chrome 10+ */
-	background: -moz-linear-gradient(top, #E40005, #BD0207); /* Firefox 3.6+ */
-	background: -ms-linear-gradient(top, #E40005, #BD0207); /* IE 10 */
-	background: -o-linear-gradient(top, #E40005, #BD0207); /* Opera 11.10+ */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EC060C), to(#c80005));  Safari 4-5, Chrome 1-9 
+	background: -webkit-linear-gradient(top, #E40005, #BD0207);  Safari 5.1, Chrome 10+ 
+	background: -moz-linear-gradient(top, #E40005, #BD0207);  Firefox 3.6+ 
+	background: -ms-linear-gradient(top, #E40005, #BD0207);  IE 10 
+	background: -o-linear-gradient(top, #E40005, #BD0207);  Opera 11.10+ */
+	background: #D10006;
+	border-width: 0;
+	-moz-border-radius: 0;
+	-khtml-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
 }
 #MEDIUM-RED-HIGHLIGHT-BORDER,
 .header-menu li,
@@ -62,7 +68,6 @@ h3 a,
 	color: #9d0106;
 	}
 #MEDIUM-RED-TEXT,
-#sidebar a,
 #page-navigation a,
 a:hover,
 .edit a,
