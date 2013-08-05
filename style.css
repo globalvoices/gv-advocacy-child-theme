@@ -104,8 +104,9 @@ h1, h2, h3, h4, h5, h6,
 big,
 .menu li,
 .call-to-action,
+.headline-title,
 .caps-all-the-headings {
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 /*Adjust header sizing for smaller than 50% logo*/
