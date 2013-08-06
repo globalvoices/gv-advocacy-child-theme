@@ -129,3 +129,21 @@ big,
 .call-to-action li {
 	clear: both;
 }
+
+@media
+only screen and (max-width: 760px) {
+	.site-title-container {
+		/*Disable position absolute*/
+		width: 250px;
+	}
+}
+@media
+only screen and (max-width: 480px) {
+	.site-title-container {
+		width: 200px;
+	}
+	.site-title-container .site-title {
+		/*Height of logo graphic*/
+		height: auto;	
+	}
+}
