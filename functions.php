@@ -100,6 +100,12 @@ if (is_object($gv)) :
 	 * @return int
 	 */
 	function gv_news_filter_display_post_terms_limit($limit, $args) {
+		global $post;
+		
+		// Don't limit terms for a single post on it's own single screen
+		if (is_single() AND ($post->ID == get_queried_object_id()))
+			return;
+		
 		// Only set limit if we're on inline format
 		if ('inline' == $args['format'])
 			return 1;
