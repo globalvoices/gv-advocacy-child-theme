@@ -65,6 +65,9 @@ if (is_object($gv)) :
 			'subtaxonomy_slug' => 'regions',
 			'taxonomy' => 'category',
 			'parent' => $countries_category_id,
+			'labels' => array(
+				'name' => _lingua('regions'), 
+			),		
 		));
 
 		// Register SPECIAL as terms with parent SPECIAL
@@ -73,6 +76,9 @@ if (is_object($gv)) :
 			'subtaxonomy_slug' => 'special',
 			'taxonomy' => 'category',
 			'parent' => $special_category_id,
+			'labels' => array(
+				'name' => _lingua('special_topics'), 
+			),			
 		));
 		
 		// Register TOPICS as terms with parent TOPICS
@@ -81,6 +87,9 @@ if (is_object($gv)) :
 			'subtaxonomy_slug' => 'topics',
 			'taxonomy' => 'category',
 			'parent' => $topics_category_id,
+			'labels' => array(
+				'name' => _lingua('topics'), 
+			),	
 		));
 
 		// Register TYPE as terms with parent TYPE
@@ -89,6 +98,9 @@ if (is_object($gv)) :
 			'subtaxonomy_slug' => 'type',
 			'taxonomy' => 'category',
 			'parent' => $type_category_id,
+			'labels' => array(
+				'name' => _lingua('type'), 
+			),			
 		));
 	}
 	add_action('init', 'gv_advox_register_taxonomies');
