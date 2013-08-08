@@ -55,7 +55,6 @@ Template: gv-project-theme
 #DARK-RED-TEXT,
 a,
 h3 a,
-#sidebar a:hover,
 #page-navigation a:hover {
 	color: #9d0106;
 	}
