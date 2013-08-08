@@ -26,7 +26,29 @@ if (is_object($gv)) :
 		return gv_get_dir('theme_images') ."gv-advocacy-apple-touch-icon-precomposed-300.png";
 	}
 	add_filter('gv_apple_touch_icon', 'gvadvocacy_theme_gv_apple_touch_icon');
-		
+	
+	/**
+	 * Filter the og:image (facebook/g+) default icon to be an Advocacy logo
+	 * 
+	 * @param string $icon Default icon
+	 * @return string desired icon
+	 */
+	function gvadvocacy_theme_gv_og_image_default($icon) {
+		return gv_get_dir('theme_images') ."advocacy-logo-square-365.png";
+	}
+	add_filter('gv_og_image_default', 'gvadvocacy_theme_gv_og_image_default');
+	
+	/**
+	 * Filter ALL CASES OF og:image (facebook/g+) icon to be an Advocacy logo
+	 * 
+	 * @param string $icon Default icon
+	 * @return string desired icon
+	 */
+	function gvadvocacy_theme_gv_og_image($icon) {
+		return gv_get_dir('theme_images') ."advocacy-logo-square-365.png";
+	}
+//	add_filter('gv_og_image', 'gvadvocacy_theme_gv_og_image');
+	
 	/**
 	 * Define the hierarchical structure of the taxonomy by its parents
 	 */
