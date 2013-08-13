@@ -91,6 +91,17 @@ if (is_object($gv)) :
 				'name' => _lingua('regions'), 
 			),		
 		));
+		
+		// Register Countries as terms with grandparent regions-countries
+		// NOTE: Only applies to some right now. 
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'countries',
+			'taxonomy' => 'category',
+			'grandparent' => $countries_category_id,
+			'labels' => array(
+				'name' => _lingua('countries'), 
+			),		
+		));
 
 		// Register SPECIAL as terms with parent SPECIAL
 		$special_category_id = gv_slug2cat('special');
