@@ -17,7 +17,18 @@ if (is_object($gv)) :
 	$gv->settings['header_img'] = get_bloginfo('template_url') . '/images/advocacy-temptitle2.png';
 
 	/**
-	 * Filter the apple touch icon to be an RV logo
+	 * Filter the favicon directory used by gv_display_head_icons()
+	 * 
+	 * @param string $dir Default directory (no trailing /) to find favicons in
+	 * @return string desired directory (no trailing /)
+	 */
+	function gvadvocacy_theme_gv_favicon_dir($dir) {
+		return 'https://s3.amazonaws.com/static.globalvoices/img/tmpl/favicon-advox';
+	}
+	add_filter('gv_favicon_dir', 'gvadvocacy_theme_gv_favicon_dir');
+	
+	/**
+	 * Filter the apple touch icon to be an Advocacy logo
 	 * 
 	 * @param string $icon Default icon
 	 * @return string desired icon
@@ -26,7 +37,7 @@ if (is_object($gv)) :
 		return gv_get_dir('theme_images') ."gv-advocacy-apple-touch-icon-precomposed-300.png";
 	}
 	add_filter('gv_apple_touch_icon', 'gvadvocacy_theme_gv_apple_touch_icon');
-	
+
 	/**
 	 * Filter the og:image (facebook/g+) default icon to be an Advocacy logo
 	 * 
