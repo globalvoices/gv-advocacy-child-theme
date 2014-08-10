@@ -11,38 +11,26 @@ Template: gv-project-theme
 
 @import url("../gv-project-theme/style.css");
 
+#WHITE-BACKGROUND,
+.header-container,
+.white-background {
+	background-color: #fff;
+}
 #MEDIUM-RED-GRADIENT,
-.header-menu-container,
-#sidebar h2,
+.header-nav-bar-container,
 .medium-red-gradient {
-/*http://css-tricks.com/examples/CSS3Gradient/*/
-/*	background-color: #E40005;
-	border-color: #BD0207;
-	border-width: 1px;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#EC060C), to(#c80005));  Safari 4-5, Chrome 1-9 
-	background: -webkit-linear-gradient(top, #E40005, #BD0207);  Safari 5.1, Chrome 10+ 
-	background: -moz-linear-gradient(top, #E40005, #BD0207);  Firefox 3.6+ 
-	background: -ms-linear-gradient(top, #E40005, #BD0207);  IE 10 
-	background: -o-linear-gradient(top, #E40005, #BD0207);  Opera 11.10+ */
 	background: #D10006;
-	border-width: 0;
-	-moz-border-radius: 0;
-	-khtml-border-radius: 0px;
-	-webkit-border-radius: 0px;
-	border-radius: 0px;
 }
 #MEDIUM-RED-HIGHLIGHT-BORDER,
-.header-menu li,
-.header-menu-container input,
+.header-nav-bar li,
+.header-nav-bar-container input,
 .medium-red-hightlight-border {
 	/* Lightest shade of green from medium-green-gradient*/
-	border-color: #E40005;
+	border-color: #BC0005;
 }
 #TEXT-SHADOW-MEDIUM-RED,
 #header-menu,
 #header-menu a,
-.sidebar h2,
-#sidebar h2 a,
 .text-shadow-medium-red {
 	color: #fff;
 	text-shadow: 1px 1px 2px #990A0D;
@@ -55,6 +43,17 @@ Template: gv-project-theme
 #DARK-RED-TEXT,
 a,
 h3 a,
+a,
+.menu-opened .menu-toggle,
+.menu-toggle:hover,
+.taxonomy-list-header-opened .taxonomy-list-toggle,
+.screen-title a:hover,
+.taxonomy-list a:hover,
+.taxonomy-tabs-container .term-union-link a,
+.post-description a:hover,
+.meta-term-subterms .active-term a,
+.share-links-icons .icon:hover,
+#comments #respond #commentform a:hover,
 #page-navigation a:hover {
 	color: #9d0106;
 	}
@@ -62,6 +61,7 @@ h3 a,
 #page-navigation a,
 a:hover,
 .edit a,
+.post-terms-taxonomy a,
 #comments .edit a,
 #cancel-comment-reply-link,
 .warning a   {
@@ -77,68 +77,48 @@ a:hover,
 	color: #d90202;
 	}
 #LIGHT-RED-BACKGROUND,
-a .avatar:hover,
 a .post-thumbnail:hover {
 	background-color: #fcb7b7;
 	border-color: #d90202; 
 	}
 #RED-TEXT-SHADOW,
-#header-menu a, 
-.sidebar h2 {
+#header-menu a,
+.red-text-shadow {
 	text-shadow: 1px 1px 2px #891818;
 	}
-
-#RED-3D-HEADING,
-#sidebar h2 {
-/*	background: #c80005 url(images/red-gradient-vertical.gif) ;
-	border-color: #c80005;*/
-	}
-
-/*Special styles*/
-#CAPS-ALL-THE-HEADINGS, 
-h1, h2, h3, h4, h5, h6, 
-big,
-.menu li,
-.headline-title,
-.caps-all-the-headings {
-	/*text-transform: uppercase;*/
-}
-
-/*Adjust header sizing for smaller than 50% logo*/
-.site-title-container {
-	margin-bottom: 0;
-	width: 33%;
-}
-.header-mission-statement-container {
-	width: 59%;
-}
-.site-title, 
-.header-mission-statement .widget {
-	height: 100px;
-}
-
-/*Call to action aggressive links*/
-.call-to-action a {
-	float: right;
-}
-.call-to-action li {
-	clear: both;
-}
+	
+.site-title {
+	width: 240px;
+	max-width: 240px;
+}	
 
 @media
-only screen and (max-width: 760px) {
-	.site-title-container {
-		/*Disable position absolute*/
-		width: 250px;
+/*only screen and (max-width: 960px) {*/
+only screen and (max-width: 1008px) {
+	.menu-item a {
+		font-size: 100%;
 	}
+	.site-title {
+		width: 160px;
+		max-width: 160px;
+	}	
+}
+/*Anything smaller than 720px*/
+@media
+only screen and (max-width: 720px) {	
 }
 @media
-only screen and (max-width: 480px) {
-	.site-title-container {
-		width: 200px;
+only screen and (max-width: 552px) {
+	.site-title {
+		width: 120px;
+		max-width: 120px;
 	}
-	.site-title-container .site-title {
-		/*Height of logo graphic*/
-		height: auto;	
-	}
+}
+/*Anything smaller than 480 - iPhone landscape*/
+@media
+only screen and (max-width: 481px) {	
+}
+/*Anything smaller than 360: iPhone portrait */
+@media
+only screen and (max-width: 360px) {		
 }
