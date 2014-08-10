@@ -14,7 +14,8 @@ if (is_object($gv)) :
 	 * Define an image to show in the header.
 	 * Project theme generic has none, so it will use site title
 	 */
-	$gv->settings['header_img'] = get_bloginfo('template_url') . '/images/advocacy-temptitle2.png';
+	$gv->settings['header_img'] = get_bloginfo('stylesheet_directory') . '/images/advox-logo-2014-dark-600.png';
+//	$gv->settings['header_img'] = get_bloginfo('stylesheet_directory') . '/images/advox-logo-2014-white-600.png';
 
 	/**
 	 * Filter the favicon directory used by gv_display_head_icons()
