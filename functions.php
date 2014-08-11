@@ -297,6 +297,7 @@ function gv_advox_css_variants() {
 	text-shadow: 1px 1px 2px #891818;
 	}
 #NO-TEXT-SHADOW,
+.header-container .menu-opened .toggle-menu-heading,
 .header-container .toggle-menu-content,
 .no-text-shadow {
 	text-shadow: none;
