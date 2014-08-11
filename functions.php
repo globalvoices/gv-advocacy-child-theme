@@ -334,6 +334,25 @@ only screen and (max-width: 1008px) {
 		",
 	));
 	
+	/**
+	 * White header variant to disable the red_header one. See gv_advox_replace_red_logo
+	 */
+	gv_add_css_variant(array(
+		'label' => 'white_header',
+		'css' => "",
+	));
+	
+	/**
+	 * Hide header mission statemtn
+	 */
+	gv_add_css_variant(array(
+		'label' => 'hide_mission_statement',
+		'css' => "
+#header-mission-statement {display:none;}	
+		",
+		
+	));
+	
 
 }
 add_action('wp', 'gv_advox_css_variants');
@@ -347,7 +366,17 @@ add_action('wp', 'gv_advox_css_variants');
  * DELETE when the variant is no longer needed.
  */
 function gv_advox_replace_red_logo() {
-		if (gv_is_active_css_variant('red_header')) :
+	
+	/**
+	 * TEMPORARY: keep it emabled all the time, unless white_header is enabled
+	 */
+	if (!gv_is_active_css_variant('white_header'))
+		gv_activate_css_variant('red_header');
+	
+	/**
+	 * If red header is active replace the logo with a white version
+	 */
+	if (gv_is_active_css_variant('red_header')) :
 
 		$white_icon_url = get_stylesheet_directory_uri() . '/images/advox-logo-2014-white-600.png';
 
