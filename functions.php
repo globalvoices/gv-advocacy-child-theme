@@ -60,27 +60,12 @@ if (is_object($gv)) :
 		return gv_get_dir('theme_images') ."advocacy-logo-square-365.png";
 	}
 	add_filter('gv_og_image', 'gvadvocacy_theme_gv_og_image');
-	
-	/**
-	 * Define the hierarchical structure of the taxonomy by its parents
-	 */
-	$gv->taxonomy_outline = array(
-		'countries' => 1,
-		'topics' => 1,
-		'special' => 1,
-		'type' => 1,
-	);
 
 	/**
 	 * Define Categories to be inserted into post data before returning content for translation during fetch
 	 * @see gv_lingua::reply_to_ping()
 	 */
 	$gv->lingua_site_categories[] = 'gv-advocacy';
-
-	/**
-	 *  Define the order of importance of the taxonomies (all taxonomy slugs should work...)
-	 */
-	$gv->taxonomy_priority = array ('countries', 'special', 'topics', 'type');
 
 	/**
 	 * Register "public taxonomies" for gv_taxonomies system to display automatically on posts
