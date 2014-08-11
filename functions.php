@@ -296,7 +296,11 @@ function gv_advox_css_variants() {
 .red-text-shadow {
 	text-shadow: 1px 1px 2px #891818;
 	}
-	
+#NO-TEXT-SHADOW,
+.header-container .toggle-menu-content,
+.no-text-shadow {
+	text-shadow: none;
+}
 
 .header-container .site-search input[type='submit'] {
 	background-color: #800205;
