@@ -293,7 +293,6 @@ function gv_advox_css_variants() {
 }
 .header-container .site-search input {
 	outline: 1px solid #800205;
-
 }
 
 #BIGGER-TEXT,
@@ -328,6 +327,33 @@ only screen and (max-width: 1008px) {
 	));
 	
 	/**
+	 * White header variant to disable the red_header one. See gv_advox_replace_red_logo
+	 */
+	gv_add_css_variant(array(
+		'label' => 'white_header_white_stripe',
+		'css' => "
+
+.header-nav-bar-container {
+	background: transparent;
+}
+#DARK-RED-TEXT,
+.header-nav-bar-container,
+#header-menu a,
+#header-menu a:hover,
+.dark-red-text {
+	color: #c80005;
+	text-shadow: none;
+	}
+.header-nav-bar .menu li {
+	padding: 0;
+	font-size: 110%;
+	text-transform: uppercase;
+}
+		
+		",
+	));
+	
+	/**
 	 * Hide header mission statemtn
 	 */
 	gv_add_css_variant(array(
@@ -355,7 +381,7 @@ function gv_advox_replace_red_logo() {
 	/**
 	 * TEMPORARY: keep it emabled all the time, unless white_header is enabled
 	 */
-	if (!gv_is_active_css_variant('white_header'))
+	if (!gv_is_active_css_variant('white_header') AND !gv_is_active_css_variant('white_header_white_stripe'))
 		gv_activate_css_variant('red_header');
 	
 	/**
