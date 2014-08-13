@@ -327,7 +327,7 @@ only screen and (max-width: 1008px) {
 	));
 	
 	/**
-	 * White header variant to disable the red_header one. See gv_advox_replace_red_logo
+	 * White header variant with white menu bar!
 	 */
 	gv_add_css_variant(array(
 		'label' => 'white_header_white_stripe',
@@ -348,6 +348,22 @@ only screen and (max-width: 1008px) {
 	padding: 0;
 	font-size: 110%;
 	text-transform: uppercase;
+}
+		
+		",
+	));
+	/**
+	 * Scarlet header just different shade of red
+	 */
+	gv_add_css_variant(array(
+		'label' => 'scarlet_header',
+		'css' => "
+
+#MEDIUM-RED-GRADIENT,
+.header-container,
+.header-nav-bar-container,
+.medium-red-gradient {
+	background: #E92E00;
 }
 		
 		",
