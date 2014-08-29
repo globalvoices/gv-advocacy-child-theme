@@ -18,6 +18,12 @@ if (is_object($gv)) :
 //	$gv->settings['header_img'] = get_bloginfo('stylesheet_directory') . '/images/advox-logo-2014-white-600.png';
 
 	/**
+	 * Enable Featured posts - Tells GV Query Manipulation to prefetch featured posts before main loop and exclude their ids.
+	 * @see gv_load_featured_posts()
+	 */
+	$gv->use_featured_posts = true;	
+	
+	/**
 	 * Filter the favicon directory used by gv_display_head_icons()
 	 * 
 	 * @param string $dir Default directory (no trailing /) to find favicons in
