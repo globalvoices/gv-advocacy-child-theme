@@ -24,6 +24,12 @@ if (is_object($gv)) :
 	$gv->use_featured_posts = true;	
 	
 	/**
+	 * Hide tags interface completely to avoid people using them
+	 * @see gv_hide_tags_ui()
+	 */
+	add_filter('gv_hide_tags_ui', '__return_true');
+	
+	/**
 	 * Filter the favicon directory used by gv_display_head_icons()
 	 * 
 	 * @param string $dir Default directory (no trailing /) to find favicons in
