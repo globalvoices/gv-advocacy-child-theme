@@ -180,6 +180,15 @@ if (is_object($gv)) :
 	add_filter('gv_project_theme_home_truncate_count', 'gv_advox_gv_project_theme_home_truncate_count', 10);
 	
 	/**
+	 * Filter how recently you must have posted to be considered active
+	 */
+	function gv_advox_filter_active_days_ago($days_ago) {
+		return 180;
+	}
+	add_filter('gv_active_days_ago', 'gv_advox_filter_active_days_ago');
+		
+	
+	/**
 	 * Define special categories as content types and the conditions in which to segregate them
 	 * Used by gv_get_segregated_categories() and gv_
 	 * segregation_conditions apply to primary content only. sidebar headlines etc assume segregation
