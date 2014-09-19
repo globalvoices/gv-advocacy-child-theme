@@ -258,120 +258,7 @@ if (is_object($gv)) :
  * @see gv_output_css_variants() which echos out the CSS of variants activated by ?gv_css_variant=$variant_label
  */
 function gv_advox_css_variants() {
-	
-	/**
-	 * Big red header
-	 */
-	gv_add_css_variant(array(
-		'label' => 'red_header',
-		'css' => "
-#MEDIUM-RED-GRADIENT,
-.header-container,
-.header-nav-bar-container,
-.medium-red-gradient {
-	background: #D10006;
-}
-#WHITE-TEXT,
-.header-container a,
-.header-mission-statement,
-.header-tools .menu-toggle,
-.white-text {
-	color: #fff; 
-}
-#DARK-RED-TEXT,
-.header-container .toggle-menu-content a,
-.header-container .menu-opened .menu-toggle,
-.dark-red-text {
-	color: #9d0106;
-	}
-#MEDIUM-RED-TEXT,
-.header-container .toggle-menu-content a:hover,
-.warning a   {
-	color: #c80005;
-	}
-#MEDIUM-RED-HIGHLIGHT-BORDER,
-.header-nav-bar li,
-.header-nav-bar-container input,
-.header .site-subscribe-icons,
-.medium-red-hightlight-border {
-	border-color: #BC0005;
-}
-#RED-TEXT-SHADOW,
-#header-menu a,
-.header-container,
-.red-text-shadow {
-	text-shadow: 1px 1px 2px #891818;
-	}
-#NO-TEXT-SHADOW,
-.header-container .menu-opened .toggle-menu-heading,
-.header-container .toggle-menu-content,
-.no-text-shadow {
-	text-shadow: none;
-}
 
-.header-container .site-search input[type='submit'] {
-	background-color: #800205;
-}
-.header-container .site-search input {
-	outline: 1px solid #800205;
-}
-
-#BIGGER-TEXT,
-.menu-item a,
-.bigger-text {
-	font-size: 120%;
-}
-.header-nav-bar .menu li {
-	padding-top: 6px;
-	padding-top: .375rem;
-	padding-bottom: 6px;
-	padding-bottom: .375rem;
-}
-
-@media
-/*only screen and (max-width: 960px) {*/
-only screen and (max-width: 1008px) {
-	.menu-item a {
-		font-size: 90%;
-	}
-}
-		",
-	));
-	
-	/**
-	 * White header variant to disable the red_header one. See gv_advox_replace_red_logo
-	 */
-	gv_add_css_variant(array(
-		'label' => 'white_header',
-		'css' => "",
-	));
-	
-	/**
-	 * White header variant with white menu bar!
-	 */
-	gv_add_css_variant(array(
-		'label' => 'white_header_white_stripe',
-		'css' => "
-
-.header-nav-bar-container {
-	background: transparent;
-}
-#DARK-RED-TEXT,
-.header-nav-bar-container,
-#header-menu a,
-#header-menu a:hover,
-.dark-red-text {
-	color: #c80005;
-	text-shadow: none;
-	}
-.header-nav-bar .menu li {
-	padding: 0;
-	font-size: 110%;
-	text-transform: uppercase;
-}
-		
-		",
-	));
 	/**
 	 * Scarlet header just different shade of red
 	 */
@@ -388,19 +275,6 @@ only screen and (max-width: 1008px) {
 		
 		",
 	));
-	
-	/**
-	 * Hide header mission statemtn
-	 */
-	gv_add_css_variant(array(
-		'label' => 'hide_mission_statement',
-		'css' => "
-#header-mission-statement {display:none;}	
-		",
-		
-	));
-	
-
 }
 add_action('wp', 'gv_advox_css_variants');
 	
@@ -437,7 +311,7 @@ function gv_advox_replace_red_logo() {
 		";
 	endif;
 }
-add_action('wp_head', 'gv_advox_replace_red_logo');
+//add_action('wp_head', 'gv_advox_replace_red_logo');
 	
 endif; // is_object($gv)
 
