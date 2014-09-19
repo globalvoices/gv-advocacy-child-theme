@@ -311,7 +311,6 @@ function gv_advox_css_variants() {
 .menu-item a,
 .bigger-text {
 	font-size: 120%;
-	text-transform: uppercase;
 }
 .header-nav-bar .menu li {
 	padding-top: 6px;
