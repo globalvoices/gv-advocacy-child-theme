@@ -11,12 +11,15 @@ Template: gv-project-theme
 
 @import url("../gv-project-theme/style.css");
 
-#WHITE-BACKGROUND,
-.header-container,
-.white-background {
-	background-color: #fff;
+#WHITE-TEXT,
+.header-container a,
+.header-mission-statement,
+.header-tools .menu-toggle,
+.white-text {
+	color: #fff; 
 }
 #MEDIUM-RED-GRADIENT,
+.header-container,
 .header-nav-bar-container,
 .medium-red-gradient {
 	background: #D10006;
@@ -24,6 +27,7 @@ Template: gv-project-theme
 #MEDIUM-RED-HIGHLIGHT-BORDER,
 .header-nav-bar li,
 .header-nav-bar-container input,
+.header .site-subscribe-icons,
 .medium-red-hightlight-border {
 	/* Lightest shade of green from medium-green-gradient*/
 	border-color: #BC0005;
@@ -31,15 +35,23 @@ Template: gv-project-theme
 #TEXT-SHADOW-MEDIUM-RED,
 #header-menu,
 #header-menu a,
+.header-container,
 .text-shadow-medium-red {
 	color: #fff;
-	text-shadow: 1px 1px 2px #990A0D;
+	text-shadow: 1px 1px 2px #891818;
 	}
 #TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
 .text-shadow-medium-grey-background {
 	color: #333;
 	text-shadow: none;
 	}
+#NO-TEXT-SHADOW,
+.header-container .menu-opened .toggle-menu-heading,
+.header-container .toggle-menu-content,
+.no-text-shadow {
+	text-shadow: none;
+}
+
 #DARK-RED-TEXT,
 a,
 h3 a,
@@ -54,7 +66,10 @@ a,
 .meta-term-subterms .active-term a,
 .share-links-icons .icon:hover,
 #comments #respond #commentform a:hover,
-#page-navigation a:hover {
+#page-navigation a:hover,
+
+.header-container .toggle-menu-content a,
+.header-container .menu-opened .menu-toggle {
 	color: #9d0106;
 	}
 #MEDIUM-RED-TEXT,
@@ -64,7 +79,9 @@ a:hover,
 .post-terms-taxonomy a,
 #comments .edit a,
 #cancel-comment-reply-link,
-.warning a   {
+.warning a ,
+
+.header-container .toggle-menu-content a:hover {
 	color: #c80005;
 	}
 
@@ -81,6 +98,12 @@ a .post-thumbnail:hover {
 	background-color: #fcb7b7;
 	border-color: #d90202; 
 	}
+.header-container .site-search input[type='submit'] {
+	background-color: #800205;
+}
+.header-container .site-search input {
+	outline: 1px solid #800205;
+}
 #RED-TEXT-SHADOW,
 #header-menu a,
 .red-text-shadow {
@@ -88,9 +111,29 @@ a .post-thumbnail:hover {
 	}
 	
 .site-title {
-	width: 240px;
-	max-width: 240px;
+	width: 300px;
+	max-width: 300px;
 }	
+
+#BIGGER-TEXT,
+.menu-item a,
+.bigger-text {
+	font-size: 120%;
+}
+
+.header-nav-bar .menu li {
+	padding-top: 6px;
+	padding-top: .375rem;
+	padding-bottom: 6px;
+	padding-bottom: .375rem;
+}
+@media
+/*only screen and (max-width: 960px) {*/
+only screen and (max-width: 1008px) {
+	.menu-item a {
+		font-size: 90%;
+	}
+}
 
 @media
 /*only screen and (max-width: 960px) {*/
@@ -99,8 +142,8 @@ only screen and (max-width: 1008px) {
 		font-size: 100%;
 	}
 	.site-title {
-		width: 160px;
-		max-width: 160px;
+		width: 240px;
+		max-width: 240px;
 	}	
 }
 /*Anything smaller than 720px*/
@@ -110,8 +153,8 @@ only screen and (max-width: 720px) {
 @media
 only screen and (max-width: 552px) {
 	.site-title {
-		width: 120px;
-		max-width: 120px;
+		width: 160px;
+		max-width: 160px;
 	}
 }
 /*Anything smaller than 480 - iPhone landscape*/
