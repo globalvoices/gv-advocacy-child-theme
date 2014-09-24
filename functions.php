@@ -177,7 +177,7 @@ if (is_object($gv)) :
 	function gv_advox_gv_project_theme_home_truncate_count($truncate_count) {
 		return 4;
 	}
-	add_filter('gv_project_theme_home_truncate_count', 'gv_advox_gv_project_theme_home_truncate_count', 10);
+//	add_filter('gv_project_theme_home_truncate_count', 'gv_advox_gv_project_theme_home_truncate_count', 10);
 	
 	/**
 	 * Filter how recently you must have posted to be considered active
