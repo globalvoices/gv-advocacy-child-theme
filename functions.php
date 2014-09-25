@@ -169,6 +169,20 @@ if (is_object($gv)) :
 	add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
 
 	/**
+	 * Filter gv_post_archive_hide_dates to hide them on hoempage
+	 * @param type $limit
+	 * @param type $args
+	 * @return int
+	 */
+	function gv_advox_gv_post_archive_hide_dates($hide_dates) {
+		if (is_home() AND !is_paged())
+			return true;
+		
+		return $hide_dates;
+	}
+	add_filter('gv_post_archive_hide_dates', 'gv_advox_gv_post_archive_hide_dates', 10);
+	
+	/**
 	 * Filter gv_post_archive_truncate_count limit to show more posts on homepage
 	 * @param type $limit
 	 * @param type $args
