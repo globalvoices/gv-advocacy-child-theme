@@ -98,7 +98,8 @@ if (is_object($gv)) :
 			'parent' => $countries_category_id,
 			'labels' => array(
 				'name' => _lingua('regions'),
-				'siblings_label' => _lingua('other_regions'),
+//				'siblings_label' => _lingua('other_regions'),
+				'siblings_label' => "Other Countries",
 				'children_label' => _lingua('countries_in_category_name'),				
 			),		
 		));
