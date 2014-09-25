@@ -13,10 +13,18 @@ Template: gv-project-theme
 
 #WHITE-TEXT,
 .header-container a,
+.header-container a:hover,
 .header-mission-statement,
 .header-tools .menu-toggle,
+.button a:hover,
 .white-text {
 	color: #fff; 
+}
+#WHITE-GLOWING-TEXT,
+.header-tools .menu-toggle:hover,
+.white-glowing-text {
+	color: #fff;
+	text-shadow: 0px 0px 2px #FFF;
 }
 #MEDIUM-RED-GRADIENT,
 .header-container,
