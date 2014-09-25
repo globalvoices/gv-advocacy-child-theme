@@ -97,7 +97,9 @@ if (is_object($gv)) :
 			'taxonomy' => 'category',
 			'parent' => $countries_category_id,
 			'labels' => array(
-				'name' => _lingua('regions'), 
+				'name' => _lingua('regions'),
+				'siblings_label' => _lingua('other_regions'),
+				'children_label' => _lingua('countries_in_category_name'),				
 			),		
 		));
 		
@@ -108,7 +110,8 @@ if (is_object($gv)) :
 			'taxonomy' => 'category',
 			'grandparent' => $countries_category_id,
 			'labels' => array(
-				'name' => _lingua('countries'), 
+				'name' => _lingua('countries'),
+				'siblings_label' => _lingua('countries_in_category_name'),				
 			),		
 		));
 
@@ -120,6 +123,7 @@ if (is_object($gv)) :
 			'parent' => $special_category_id,
 			'labels' => array(
 				'name' => _lingua('special_topics'), 
+				'siblings_label' => _lingua('other_special_topics'), 				
 			),			
 		));
 		
@@ -130,7 +134,8 @@ if (is_object($gv)) :
 			'taxonomy' => 'category',
 			'parent' => $topics_category_id,
 			'labels' => array(
-				'name' => _lingua('topics'), 
+				'name' => _lingua('topics'),
+				'siblings_label' => _lingua('other_topics'),				
 			),	
 		));
 
