@@ -26,6 +26,11 @@ Template: gv-project-theme
 	color: #fff;
 	text-shadow: 0px 0px 2px #FFF;
 }
+#DARK-GREY-TEXT,
+.header-container .toggle-menu-content,
+.dark-grey-text {
+	color: #333;
+}
 #MEDIUM-RED-GRADIENT,
 .header-container,
 .header-nav-bar-container,
