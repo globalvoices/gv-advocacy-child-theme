@@ -46,12 +46,10 @@ Template: gv-project-theme
 	border-color: #BC0005;
 }
 #TEXT-SHADOW-MEDIUM-RED,
-#header-menu,
-#header-menu a,
 .header-container,
 .text-shadow-medium-red {
 	color: #fff;
-	text-shadow: 1px 1px 2px #891818;
+	text-shadow: 1px 1px 2px #A20005;
 	}
 #TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
 .text-shadow-medium-grey-background {
@@ -61,6 +59,7 @@ Template: gv-project-theme
 #NO-TEXT-SHADOW,
 .header-container .menu-opened .toggle-menu-heading,
 .header-container .toggle-menu-content,
+.header-container .active-item a,
 .no-text-shadow {
 	text-shadow: none;
 }
@@ -117,23 +116,11 @@ a .post-thumbnail:hover {
 .header-container .site-search input {
 	outline: 1px solid #800205;
 }
-#RED-TEXT-SHADOW,
-#header-menu a,
-.red-text-shadow {
-	text-shadow: 1px 1px 2px #891818;
-	}
-	
 .site-title {
 	width: 300px;
 	max-width: 300px;
 }	
 
-.header-nav-bar .menu li {
-	padding-top: 6px;
-	padding-top: .375rem;
-	padding-bottom: 6px;
-	padding-bottom: .375rem;
-}
 @media
 only screen and (max-width: 1008px) {
 
