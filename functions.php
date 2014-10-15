@@ -71,7 +71,7 @@ if (is_object($gv)) :
 	function gvadvocacy_theme_gv_og_image($icon) {
 		return gv_get_dir('theme_images') ."advocacy-logo-square-365.png";
 	}
-	add_filter('gv_og_image', 'gvadvocacy_theme_gv_og_image');
+//	add_filter('gv_og_image', 'gvadvocacy_theme_gv_og_image');
 
 	/**
 	 * Define Categories to be inserted into post data before returning content for translation during fetch
