@@ -38,9 +38,9 @@ Template: gv-project-theme
 	background: #D10006;
 }
 #MEDIUM-RED-HIGHLIGHT-BORDER,
-.header-nav-bar li,
-.header-nav-bar-container input,
-.header .site-subscribe-icons,
+.header-menu li,
+.header-menu-container input,
+.header-tools .menu-toggle,
 .medium-red-hightlight-border {
 	/* Lightest shade of green from medium-green-gradient*/
 	border-color: #BC0005;
