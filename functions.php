@@ -90,41 +90,28 @@ if (is_object($gv)) :
 		gv_unregister_public_taxonomy('category');
 		gv_unregister_public_taxonomy('post_tag');
 
-		// Register REGIONS as terms with parent regions-countries
-		$countries_category_id = gv_slug2cat('regions-countries');
+		$world_category_id = gv_slug2cat('world');
+		// Register REGIONS as terms with parent WORLD
 		gv_register_public_taxonomy('category', array(
 			'subtaxonomy_slug' => 'regions',
 			'taxonomy' => 'category',
-			'parent' => $countries_category_id,
+			'parent' => $world_category_id,
 			'labels' => array(
 				'name' => _lingua('regions'),
-//				'siblings_label' => _lingua('other_regions'),
-				'siblings_label' => "Other Countries",
-				'children_label' => _lingua('countries_in_category_name'),				
-			),		
-		));
+				'siblings_label' => _lingua('other_regions'),
+				'children_label' => _lingua('countries_in_category_name'),
+			),
+			'show_siblings' => false,
+		));		
 		
-		// Register Countries as terms with grandparent regions-countries
-		// NOTE: Only applies to some right now. 
+		// Register COUNTRIES as terms with grandparent WORLD
 		gv_register_public_taxonomy('category', array(
 			'subtaxonomy_slug' => 'countries',
 			'taxonomy' => 'category',
-			'grandparent' => $countries_category_id,
+			'grandparent' => $world_category_id,
 			'labels' => array(
 				'name' => _lingua('countries'),
-				'siblings_label' => _lingua('countries_in_category_name'),				
-			),		
-		));
-
-		// Register SPECIAL as terms with parent SPECIAL
-		$special_category_id = gv_slug2cat('special');
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'special',
-			'taxonomy' => 'category',
-			'parent' => $special_category_id,
-			'labels' => array(
-				'name' => _lingua('special_topics'), 
-				'siblings_label' => _lingua('other_special_topics'), 				
+				'siblings_label' => _lingua('countries_in_category_name'),
 			),			
 		));
 		
@@ -140,6 +127,18 @@ if (is_object($gv)) :
 			),	
 		));
 
+		// Register SPECIAL as terms with parent SPECIAL
+		$special_category_id = gv_slug2cat('special');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'special',
+			'taxonomy' => 'category',
+			'parent' => $special_category_id,
+			'labels' => array(
+				'name' => _lingua('special_topics'), 
+				'siblings_label' => _lingua('other_special_topics'), 				
+			),			
+		));
+		
 		// Register TYPE as terms with parent TYPE
 		$type_category_id = gv_slug2cat('type');
 		gv_register_public_taxonomy('category', array(
@@ -148,7 +147,8 @@ if (is_object($gv)) :
 			'parent' => $type_category_id,
 			'labels' => array(
 				'name' => _lingua('type'), 
-			),			
+			),
+			'public' => false,
 		));
 	}
 	add_action('init', 'gv_advox_register_taxonomies');
