@@ -428,7 +428,7 @@ if (is_object($gv)) :
 	$gv->new_categories["Puerto Rico (U.S.)"] = array("slug" => "puerto-rico-us", 'description' => '', 'parent' => "latin-america");
 	$gv->new_categories["Uruguay"] = array("slug" => "uruguay", 'description' => '', 'parent' => "latin-america");
 	$gv->new_categories["Venezuela"] = array("slug" => "venezuela", 'description' => '', 'parent' => "latin-america");
-		
+
 //REGION AND CHILDREN: Middle East & North Africa
 	$gv->new_categories["Middle East & North Africa"] = array("slug" => "middle-east-north-africa", 'description' => '', 'parent' => "world");
  
@@ -732,7 +732,7 @@ function advox_define_term_migrations() {
 	gv_define_term_migration($args);	
 	$args['source_term'] = 'macedonia';
 	gv_define_term_migration($args);	
-	$args['source_term'] = 'macedonia';
+	$args['source_term'] = 'moldova';
 	gv_define_term_migration($args);	
 	$args['source_term'] = 'poland';
 	gv_define_term_migration($args);	
