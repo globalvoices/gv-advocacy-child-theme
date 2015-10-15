@@ -85,6 +85,12 @@ if (is_object($gv)) :
 	 * Should completely replace old backbone/taxonomy_priority system eventually
 	 */
 	function gv_advox_register_taxonomies($param) {
+		
+		/**
+		 * TEMPORARY: Exit if world doesn't exist to avoid choking initially.
+		 */
+		if (!gv_slug2cat('world', false, false)) 
+			return;
 
 		// Unregister defaults as they aren't useful for this site
 		gv_unregister_public_taxonomy('category');
