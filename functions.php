@@ -276,8 +276,22 @@ if (is_object($gv)) :
 //	);
 	
 	/**
-	 * NEW CATEGORIES TO MATCH GV NEWS
+	 * NEW CATEGORIES TO MATCH GV NEWS AND CLEAN UP TAXONOMY
 	 */
+
+	/**
+	 * New topic categories to merge old freedom-of-expression and arrest-and-harassment categories into
+	 */
+	$gv->new_categories["Free Expression"] = array(
+		"slug" => "free-expression",
+		'description' => '',
+		'parent' => "topics"
+		);		
+	$gv->new_categories["Legal Threats"] = array(
+		"slug" => "legal-threats",
+		'description' => '',
+		'parent' => "topics"
+		);		
 	
 	// SPECIAL: temporary categories to migrate awkward old auto-slug categories
 	// term_exists() considers "iraq" and "iraq-country" the same, so we use these as interim
@@ -592,8 +606,29 @@ function advox_define_term_migrations() {
 		'target_taxonomy' => 'category', 
 		'delete_source_term' => true,	
 	);
+
 	/**
 	 * Single category merge+forward+delete (deleting source category)
+	 */
+	
+	/**
+	 * TOPIC CLEANUP
+	 */
+	// Merge duplicate opinion-type into type>opinion
+	$args['source_term'] = 'opinion-type';
+	$args['target_term'] = 'opinion';	
+	gv_define_term_migration($args);
+	// Migrate freedom-of-expression->free-expression
+	$args['source_term'] = 'freedom-of-expression';
+	$args['target_term'] = 'free-expression';	
+	gv_define_term_migration($args);
+	// Migrate arrest and harassmetn to legal threats
+	$args['source_term'] = 'arrest-and-harassment';
+	$args['target_term'] = 'legal-threats';	
+	gv_define_term_migration($args);
+	
+	/**
+	 * MESSY COUNTRY AUTO-TAG CLEANUP
 	 */
 	// CONVERT iraq-countries to country-of-iraq then to true iraq
 	$args['source_term'] = 'iraq-countries';
@@ -690,12 +725,14 @@ function advox_define_term_migrations() {
 //		'target_taxonomy' => 'category', 
 		'source_new_parent' => '',
 	);
-	
+
 	/**
-	 * countries moved to sub-saharan-africa
+	 * Move opinion into type
 	 */
-	// Set target_term
-//	$args['target_term'] = 'sub-saharan-africa';
+	$args['source_new_parent'] = 'type';	
+	$args['source_term'] = 'opinion';
+	gv_define_term_migration($args);
+
 	/**
 	 * Convert existing caribbean countries
 	 */
