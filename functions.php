@@ -625,14 +625,56 @@ function advox_define_term_migrations() {
 	gv_define_term_migration($args);
 	
 	/**
-	 * Delete source and forward it to target without re-assigning posts 
-	 *  Delete "technology & Internet" and forward it to technology, but dont' re-assign posts
+	 * Misnamed Country Cleanup
+	 * 
+	 * Regions and Countries -> DELETE
 	 */
-	$args['source_term'] = 'technology-internet';
-	$args['target_term'] = 'technology';
+	$args['source_term'] = 'democratic-republic-of-congo';
+	$args['target_term'] = 'republic-of-congo';	
+	gv_define_term_migration($args);
+	$args['source_term'] = 'europe';
+	$args['target_term'] = 'western-europe';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'hong-kong';
+	$args['target_term'] = 'hong-kong-china';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'macau';
+	$args['target_term'] = 'macau-china';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'moldavia';
+	$args['target_term'] = 'moldova';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'burma';
+	$args['target_term'] = 'myanmar-burma';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'myanmar';
+	$args['target_term'] = 'myanmar-burma';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'southeast-asia';
+	$args['target_term'] = 'south-asia';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'taiwan';
+	$args['target_term'] = 'taiwan-roc';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'the-netherlands';
+	$args['target_term'] = 'netherlands';
+	gv_define_term_migration($args);
+	$args['source_term'] = 'united-states-countries';
+	$args['target_term'] = 'usa';
+	gv_define_term_migration($args);
+	
+	
+	/**
+	 * Delete source and forward it to target without re-assigning posts 
+	 */
 	$args['skip_post_assignment'] = true;
-//	gv_define_term_migration($args);
-	// Unset skip_post_assignments to avoid it affecting anything after by accident
+	
+	// Latin America and Caribbean -> Delete forward Latin America
+	$args['source_term'] = 'latin-america-and-caribbean';
+	$args['target_term'] = 'latin-america';
+	gv_define_term_migration($args);
+	
+	// UNSET skip_post_assignments to avoid it affecting anything after by accident
 	unset($args['skip_post_assignment']);
 	
 	/**
@@ -907,7 +949,7 @@ function advox_define_term_migrations() {
 	gv_define_term_migration($args);	
 	
 	/**
-	 * Convert existing countries in 
+	 * Convert existing countries in western europe
 	 */
 	$args['source_new_parent'] = 'western-europe';
 	
