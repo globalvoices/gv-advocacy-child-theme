@@ -97,6 +97,30 @@ if (is_object($gv)) :
 		gv_unregister_public_taxonomy('post_tag');
 
 		$world_category_id = gv_slug2cat('world');
+	
+		// Register TOPICS as terms with parent TOPICS
+		$topics_category_id = gv_slug2cat('topics');
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'topics',
+			'taxonomy' => 'category',
+			'parent' => $topics_category_id,
+			'labels' => array(
+				'name' => _lingua('topics'),
+				'siblings_label' => _lingua('other_topics'),				
+			),	
+		));
+		
+		// Register COUNTRIES as terms with grandparent WORLD
+		gv_register_public_taxonomy('category', array(
+			'subtaxonomy_slug' => 'countries',
+			'taxonomy' => 'category',
+			'grandparent' => $world_category_id,
+			'labels' => array(
+				'name' => _lingua('countries'),
+				'siblings_label' => _lingua('countries_in_category_name'),
+			),			
+		));		
+
 		// Register REGIONS as terms with parent WORLD
 		gv_register_public_taxonomy('category', array(
 			'subtaxonomy_slug' => 'regions',
@@ -108,29 +132,6 @@ if (is_object($gv)) :
 				'children_label' => _lingua('countries_in_category_name'),
 			),
 			'show_siblings' => false,
-		));		
-		
-		// Register COUNTRIES as terms with grandparent WORLD
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'countries',
-			'taxonomy' => 'category',
-			'grandparent' => $world_category_id,
-			'labels' => array(
-				'name' => _lingua('countries'),
-				'siblings_label' => _lingua('countries_in_category_name'),
-			),			
-		));
-		
-		// Register TOPICS as terms with parent TOPICS
-		$topics_category_id = gv_slug2cat('topics');
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'topics',
-			'taxonomy' => 'category',
-			'parent' => $topics_category_id,
-			'labels' => array(
-				'name' => _lingua('topics'),
-				'siblings_label' => _lingua('other_topics'),				
-			),	
 		));
 
 		// Register SPECIAL as terms with parent SPECIAL
