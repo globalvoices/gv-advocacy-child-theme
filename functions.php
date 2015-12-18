@@ -1038,7 +1038,7 @@ add_action('init', 'advox_define_term_migrations');
 			'object_label' => 'Region',
 			'description' => "Note: These numbers only count posts directly marked with a region. Some authors forget to add region categories, and on the site's region screens we show all posts as long as they are categorized with a country inside the region. <br /><br /> Note: Any given post might be in several of these categories, so adding up the various sections will likely give you a higher number than the actual posts for the period. ",
 			'data_skeleton_callback' => array('callback' => array(&$gv_stats, 'category_children_data_skeleton'), 'arg' =>array('parent'=>gv_slug2cat('world'))),
-			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'))),
+			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'), 'include_grandchildren' => true)),
 		));
 		$gv_stats->add_stats_page_type(array(
 			'page_slug' => 'gv_stats_topics', 
