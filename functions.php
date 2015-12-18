@@ -1036,10 +1036,19 @@ add_action('init', 'advox_define_term_migrations');
 			'page_title' => 'Region Category Stats', 
 			'menu_title' => 'Region Stats', 
 			'object_label' => 'Region',
-			'description' => "Note: These numbers only count posts directly marked with a region. Some authors forget to add region categories, and on the site's region screens we show all posts as long as they are categorized with a country inside the region. <br /><br /> Note: Any given post might be in several of these categories, so adding up the various sections will likely give you a higher number than the actual posts for the period. ",
+			'description' => "Note: These numbers reflect all posts in the region category or any of it's child countries, rather than just posts with the indicated category. This matches the theme behavior, where region archives show posts in child categories even if the region category isn't attached to the post. <br /><br /> Note: Any given post might be in several of these categories, so adding up the various sections will likely give you a higher number than the actual posts for the period. ",
 			'data_skeleton_callback' => array('callback' => array(&$gv_stats, 'category_children_data_skeleton'), 'arg' =>array('parent'=>gv_slug2cat('world'))),
 			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'), 'include_grandchildren' => true)),
 		));
+		$gv_stats->add_stats_page_type(array(
+			'page_slug' => 'gv_stats_countries', 
+			'page_title' => 'Country Category Stats', 
+			'menu_title' => 'Country Stats', 
+			'object_label' => 'Country',
+			'description' => "Note: Any given post might be in several of these categories, so adding up the various sections will likely give you a higher number than the actual posts for the period. ",
+			'data_skeleton_callback' => array('callback' => array(&$gv_stats, 'category_children_data_skeleton'), 'arg' => array('parent'=>gv_slug2cat('world'), 'grandchildren_only' => true)),
+			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'), 'grandchildren_only' => true)),
+		));	
 		$gv_stats->add_stats_page_type(array(
 			'page_slug' => 'gv_stats_topics', 
 			'page_title' => 'Topic Category Stats', 
@@ -1055,6 +1064,7 @@ add_action('init', 'advox_define_term_migrations');
 			'gv_stats_active_users' => array('1_month_ago', '2_months_ago', '3_months_ago', 'past_year', 'last_year', 'all_time'),
 			'gv_stats_comments' => array('1_month_ago', '2_months_ago', '3_months_ago', 'past_year', 'last_year', 'all_time'),
 			'gv_stats_regions' => array('1_month_ago', 'past_year'),
+			'gv_stats_countries' => array('1_month_ago', 'past_year'),			
 			'gv_stats_topics' => array('1_month_ago', 'past_year'),
 //			'gv_stats_languages' => array('1_month_ago', 'past_year'),
 //			'gv_stats_groups' => array('1_week_ago', '1_month_ago'),
