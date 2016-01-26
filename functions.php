@@ -94,7 +94,13 @@ if (is_object($gv)) :
 
 		// Unregister defaults as they aren't useful for this site
 		gv_unregister_public_taxonomy('category');
+		
+		/**
+		 * ADVOX IS ALLOWED TAGS
+		 * Don't unregister tags AND filter gv_hide_tags_ui as false so the metabox isn't CSS-hidden
+		 */
 //		gv_unregister_public_taxonomy('post_tag');
+		add_filter('gv_hide_tags_ui', '__return_false');
 
 		$world_category_id = gv_slug2cat('world');
 	
