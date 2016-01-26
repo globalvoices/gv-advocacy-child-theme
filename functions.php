@@ -94,7 +94,7 @@ if (is_object($gv)) :
 
 		// Unregister defaults as they aren't useful for this site
 		gv_unregister_public_taxonomy('category');
-		gv_unregister_public_taxonomy('post_tag');
+//		gv_unregister_public_taxonomy('post_tag');
 
 		$world_category_id = gv_slug2cat('world');
 	
