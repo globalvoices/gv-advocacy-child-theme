@@ -58,7 +58,7 @@ if (is_object($gv)) :
 	 * @return string desired icon
 	 */
 	function gvadvocacy_theme_gv_og_image_default($icon) {
-		return gv_get_dir('theme_images') ."advocacy-logo-square-365.png";
+		return gv_get_dir('theme_images') ."gv-advox-white-fb-1200x631.png";
 	}
 	add_filter('gv_og_image_default', 'gvadvocacy_theme_gv_og_image_default');
 	
