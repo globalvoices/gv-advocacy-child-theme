@@ -30,6 +30,19 @@ if (is_object($gv)) :
 	add_filter('gv_hide_tags_ui', '__return_true');
 	
 	/**
+	 * Filter gv_header_color
+	 * 
+	 * Currently specifically intended for AMP plugin 
+	 * 
+	 * @see gv-amp.php
+	 * @return string
+	 */
+	function gvadvocacy_header_color() {
+		return 'D10006';
+	}
+	add_filter('gv_header_color', 'gvadvocacy_header_color');
+	
+	/**
 	 * Filter the favicon directory used by gv_display_head_icons()
 	 * 
 	 * @param string $dir Default directory (no trailing /) to find favicons in
@@ -125,7 +138,7 @@ if (is_object($gv)) :
 				'name' => _lingua('countries'),
 				'siblings_label' => _lingua('countries_in_category_name'),
 			),			
-		));		
+		));
 
 		// Register REGIONS as terms with parent WORLD
 		gv_register_public_taxonomy('category', array(
