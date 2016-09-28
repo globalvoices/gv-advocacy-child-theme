@@ -30,17 +30,21 @@ if (is_object($gv)) :
 	add_filter('gv_hide_tags_ui', '__return_true');
 	
 	/**
-	 * Filter gv_header_color
+	 * Set site colors for use in PHP-driven CSS (AMP templates)
 	 * 
 	 * Currently specifically intended for AMP plugin 
 	 * 
-	 * @see gv-amp.php
-	 * @return string
+	 * @see gv_get_site_colors()
+	 * @return type
 	 */
-	function gvadvocacy_header_color() {
-		return 'D10006';
+	function gvadvocacy_gv_site_colors() {
+		return array(
+			'solid_bg' => 'D10006',
+			'link_dark' => '9d0106',
+			'link_light' => 'c80005',
+		);
 	}
-	add_filter('gv_header_color', 'gvadvocacy_header_color');
+	add_filter('gv_site_colors', 'gvadvocacy_gv_site_colors');
 	
 	/**
 	 * Filter the favicon directory used by gv_display_head_icons()
