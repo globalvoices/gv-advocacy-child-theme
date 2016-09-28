@@ -87,6 +87,22 @@ if (is_object($gv)) :
 //	add_filter('gv_og_image', 'gvadvocacy_theme_gv_og_image');
 
 	/**
+	 * Filter Google Structured Data "logo" for AMP
+	 * 
+	 * @see gv_get_sd_logo() Which uses this
+	 * @param string $icon Default icon
+	 * @return string desired icon
+	 */
+	function gvadvocacy_theme_gv_sd_logo($icon) {
+		return array(
+			'url' => 'http://s3.amazonaws.com/static.globalvoices/img/tmpl/advox-redbg-structureddata-60x219.png',
+			'height' => 60,
+			'width' => 219,
+		);
+	}
+	add_filter('gv_sd_logo', 'gvadvocacy_theme_gv_sd_logo');
+
+	/**
 	 * Define Categories to be inserted into post data before returning content for translation during fetch
 	 * @see gv_lingua::reply_to_ping()
 	 */
