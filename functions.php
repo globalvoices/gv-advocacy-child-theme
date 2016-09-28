@@ -14,8 +14,7 @@ if (is_object($gv)) :
 	 * Define an image to show in the header.
 	 * Project theme generic has none, so it will use site title
 	 */
-	$gv->settings['header_img'] = get_bloginfo('stylesheet_directory') . '/images/advocacy-old-white-600.png';
-//	$gv->settings['header_img'] = get_bloginfo('stylesheet_directory') . '/images/advox-logo-2014-white-600.png';
+	$gv->settings['header_img'] = 'https://advox.globalvoices.org/wp-content/uploads/2016/01/advox-theme-header-6002.png';
 
 	/**
 	 * Enable Featured posts - Tells GV Query Manipulation to prefetch featured posts before main loop and exclude their ids.
