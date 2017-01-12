@@ -1064,9 +1064,16 @@ function advox_define_term_migrations() {
 		
 }
 add_action('init', 'advox_define_term_migrations');
-	/**
-	 * Register the default stats pages for gv_stats to display in the admin.
-	 */
+	
+/**
+ * Register the specialized stats pages advox needs gv_stats to display in the admin.
+ * 
+ * Note priority 100 so it comes after both gv_lingua_init (priority 10) and
+ * project_theme_register_stats_pages (priority 99) on init hook
+ */
+function advocacy_theme_register_stats_pages() {
+	global $gv_stats;
+	
 	if (isset($gv_stats) AND is_object($gv_stats)) :
 
 		/**
@@ -1099,18 +1106,21 @@ add_action('init', 'advox_define_term_migrations');
 			'data_skeleton_callback' => array('callback' => array(&$gv_stats, 'category_children_data_skeleton'), 'arg' =>array('parent'=>gv_slug2cat('topics'))),
 			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('topics'))),
 		));
-		
 		/**
 		 * Register our special stats pages. 
 		 * Defaults should already be registered by GV Project Theme in project_theme_register_stats_pages()
 		 */
 		$gv_stats->register_stats_pages(array(
+			// unregister generic categories because we cover it with specialist sections below
+			'gv_stats_categories' => false,
 			'gv_stats_active_users_local' => array('1_month_ago', '2_months_ago', '3_months_ago', 'past_year', 'last_year', 'all_time'), // DEBUGGING ONLY TEMPORARY
 			'gv_stats_regions' => array('1_month_ago', 'past_year'),
 			'gv_stats_countries' => array('1_month_ago', 'past_year'),			
 			'gv_stats_topics' => array('1_month_ago', 'past_year'),
 		));		
 	endif;
+}
+add_action('init', 'advocacy_theme_register_stats_pages', 100);
 
 /**
  * Register CSS variants specific to the GV News theme
