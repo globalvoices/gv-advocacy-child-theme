@@ -249,7 +249,7 @@ if (is_object($gv)) :
 	 * Filter how recently you must have posted to be considered active
 	 */
 	function gv_advox_filter_active_days_ago($days_ago) {
-		return 180;
+		return 365;
 	}
 	add_filter('gv_active_days_ago', 'gv_advox_filter_active_days_ago');
 		
