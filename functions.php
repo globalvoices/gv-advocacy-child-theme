@@ -1064,7 +1064,36 @@ function advox_define_term_migrations() {
 		
 }
 add_action('init', 'advox_define_term_migrations');
-	
+
+/**
+ * Filter the default stats report with specific news theme reports.
+ *
+ * @see gv_stats_factory->load_reports() which runs the gv_stats_default_reports filter
+ * @param array $reports Slugs of stats report classes extended from gv_stats_report
+ * @return array Filter list of report class names
+ */
+function advox_stats_reports($reports) {
+	// Load the theme reports
+	include_once __DIR__ . '/gv-stats-reports.php';
+
+	// Merge in an array of our cutom reports for special category subsets
+	$reports = array_merge($reports, array(
+		'gv_stats_report_countries',
+		'gv_stats_report_regions',
+		'gv_stats_report_topics',
+	));
+
+	/**
+	 * Remove the default category report which is pretty useless for this site
+	 */
+	$reports = array_diff($reports, array(
+		'gv_stats_report_categories',
+	));
+
+	return $reports;
+}
+add_action('gv_stats_default_reports', 'advox_stats_reports');
+
 /**
  * Register the specialized stats pages advox needs gv_stats to display in the admin.
  * 
@@ -1080,7 +1109,7 @@ function advocacy_theme_register_stats_pages() {
 		 * Custom stats pages for Advox regions, countries and topics
 		 */
 		$gv_stats->add_stats_page_type(array(
-			'page_slug' => 'gv_stats_regions', 
+			'page_slug' => 'gv_stats_regions_old', 
 			'page_title' => 'Region Category Stats', 
 			'menu_title' => 'Region Stats', 
 			'object_label' => 'Region',
@@ -1089,7 +1118,7 @@ function advocacy_theme_register_stats_pages() {
 			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'), 'include_grandchildren' => true)),
 		));
 		$gv_stats->add_stats_page_type(array(
-			'page_slug' => 'gv_stats_countries', 
+			'page_slug' => 'gv_stats_countries_old', 
 			'page_title' => 'Country Category Stats', 
 			'menu_title' => 'Country Stats', 
 			'object_label' => 'Country',
@@ -1098,7 +1127,7 @@ function advocacy_theme_register_stats_pages() {
 			'query_callback' => array('callback' => array(&$gv_stats, 'category_children_stats_query'), 'arg'=>array('parent' => gv_slug2cat('world'), 'grandchildren_only' => true)),
 		));	
 		$gv_stats->add_stats_page_type(array(
-			'page_slug' => 'gv_stats_topics', 
+			'page_slug' => 'gv_stats_topics_old', 
 			'page_title' => 'Topic Category Stats', 
 			'menu_title' => 'Topic Stats', 
 			'object_label' => 'Topic',
@@ -1112,11 +1141,11 @@ function advocacy_theme_register_stats_pages() {
 		 */
 		$gv_stats->register_stats_pages(array(
 			// unregister generic categories because we cover it with specialist sections below
-			'gv_stats_categories' => false,
-			'gv_stats_active_users_local' => array('1_month_ago', '2_months_ago', '3_months_ago', 'past_year', 'last_year', 'all_time'), // DEBUGGING ONLY TEMPORARY
-			'gv_stats_regions' => array('1_month_ago', 'past_year'),
-			'gv_stats_countries' => array('1_month_ago', 'past_year'),			
-			'gv_stats_topics' => array('1_month_ago', 'past_year'),
+			'gv_stats_categories_old' => false,
+			'gv_stats_active_users_local_old' => array('1_month_ago', '2_months_ago', '3_months_ago', 'past_year', 'last_year', 'all_time'), // DEBUGGING ONLY TEMPORARY
+			'gv_stats_regions_old' => array('1_month_ago', 'past_year'),
+			'gv_stats_countries_old' => array('1_month_ago', 'past_year'),			
+			'gv_stats_topics_old' => array('1_month_ago', 'past_year'),
 		));		
 	endif;
 }
