@@ -182,7 +182,7 @@ if (is_object($gv)) :
 				'name' => _lingua('special_topics'), 
 				'siblings_label' => _lingua('other_special_topics'), 				
 			),
-			'public' => false,
+//			'public' => true,
 		));
 		
 		// Register TYPE as terms with parent TYPE
