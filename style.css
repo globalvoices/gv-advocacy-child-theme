@@ -1,15 +1,13 @@
 /*
-Theme Name: GV Advocacy Child Theme
-Theme URI: http://advocacy.globalvoicesonline.org/
-Description: Child theme for the generic gv-project-theme for Advocacy.
+Theme Name: GV Advox Child Theme
+Theme URI: http://advox.globalvoices.org/
+Description: Child theme for the generic gv-project-theme for Advox.
 Version: 2.0
-Author: Erik Gyepes and Jeremy Clarke
-Author URI: http://globalvoicesonline.org/
+Author: Jer Clarke
+Author URI: http://globalvoices.org/
 Template: gv-project-theme
 
 */
-
-@import url("../gv-project-theme/style.css");
 
 #WHITE-TEXT,
 .header-container a,
