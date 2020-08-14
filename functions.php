@@ -284,6 +284,7 @@ if (is_object($gv)) :
 			),
 	);
 
+
 	/**
 	 * Define new categories to force addition of on all sites using this theme.
 	 *
@@ -1133,70 +1134,6 @@ function advocacy_theme_register_stats_pages() {
 	endif;
 }
 add_action('init', 'advocacy_theme_register_stats_pages', 100);
-
-/**
- * Register CSS variants specific to the GV News theme
- * 
- * Attached to 'wp' action so as to come before wp_head where gv_output_css_variants acts
- * 
- * @see gv_add_css_variant() which is used to register variants
- * @see gv_output_css_variants() which echos out the CSS of variants activated by ?gv_css_variant=$variant_label
- */
-function gv_advox_css_variants() {
-
-	/**
-	 * Scarlet header just different shade of red
-	 */
-	gv_add_css_variant(array(
-		'label' => 'scarlet_header',
-		'css' => "
-
-#MEDIUM-RED-GRADIENT,
-.header-container,
-.header-nav-bar-container,
-.medium-red-gradient {
-	background: #E92E00;
-}
-		
-		",
-	));
-}
-add_action('wp', 'gv_advox_css_variants');
-	
-/**
- * Red Header variant: jQuery to replace default header image
- * 
- * Makes it so that if red_header CSS variant is active the header image is automatically
- * replced with an all-white version. 
- * 
- * DELETE when the variant is no longer needed.
- */
-function gv_advox_replace_red_logo() {
-	
-	/**
-	 * TEMPORARY: keep it emabled all the time, unless white_header is enabled
-	 */
-	if (!gv_is_active_css_variant('white_header') AND !gv_is_active_css_variant('white_header_white_stripe'))
-		gv_activate_css_variant('red_header');
-	
-	/**
-	 * If red header is active replace the logo with a white version
-	 */
-	if (gv_is_active_css_variant('red_header')) :
-
-		$white_icon_url = get_stylesheet_directory_uri() . '/images/advox-logo-2014-white-600.png';
-
-		echo "
-<script type='text/javascript'>
-	jQuery(document).ready(function($) {
-		$('#logo').attr('src', '$white_icon_url');
-			console.log('test');
-	});
-</script>
-		";
-	endif;
-}
-//add_action('wp_head', 'gv_advox_replace_red_logo');
 	
 endif; // is_object($gv)
 
