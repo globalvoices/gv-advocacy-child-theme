@@ -47,7 +47,7 @@ Template: gv-project-theme
 .header-container,
 .text-shadow-medium-red {
 	color: #fff;
-	text-shadow: 1px 1px 2px #A20005;
+	/* text-shadow: 1px 1px 2px #A20005; */
 	}
 #TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
 .text-shadow-medium-grey-background {
