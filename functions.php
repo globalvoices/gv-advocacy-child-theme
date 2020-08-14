@@ -285,25 +285,6 @@ if (is_object($gv)) :
 	);
 
 	/**
-	 * Define badgeset arrays for use with [gvbadges id="$slug"] shortcode
-	 */
-
-	/**
-	 * General GV Badges - Based on lingua site slug
-	 */
-	$gv->badgesets['advocacy_general'] = array(
-		'label' => "Global Voices Advocacy - Defending free speech online",
-		'url' => "http://advocacy.globalvoicesonline.org/",
-		'css' => "margin:3px 0;",
-		'files' => array(
-			'http://img.globalvoicesonline.org/Badges/advocacy/gv-advocacy-badge-125.gif',
-			'http://img.globalvoicesonline.org/Badges/advocacy/gv-advocacy-badge-150.gif',
-			'http://img.globalvoicesonline.org/Badges/advocacy/gv-advocacy-badge-200.gif',
-			'http://img.globalvoicesonline.org/Badges/advocacy/gv-advocacy-badge-400.gif'
-		),
-	);
-
-	/**
 	 * Define new categories to force addition of on all sites using this theme.
 	 *
 	 * Used to add categories to all lingua sites automatically. Array used to be defined in the function.
