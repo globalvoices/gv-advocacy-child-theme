@@ -266,8 +266,10 @@ if (is_object($gv)) :
 
 	/**
 	 * Set a custom site description using a lingua string. To be used in social media sharing etc.
+	 * 
+	 * Note: No tagline set here, so the one in WP Admin > Settings > General will be used
 	 */
-	$gv->site_description = "A project of Global Voices Online, we seek to build a global anti-censorship network of bloggers and online activists dedicated to protecting freedom of expression and free access to information online.";
+	$gv->site_description = "A project of Global Voices, we seek to build a global anti-censorship network of bloggers and online activists dedicated to protecting freedom of expression and free access to information online.";
 	
 	/**
 	 * Sponsors definition to be used by gv_get_sponsors()
