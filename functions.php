@@ -269,7 +269,7 @@ if (is_object($gv)) :
 	 * 
 	 * Note: No tagline set here, so the one in WP Admin > Settings > General will be used
 	 */
-	$gv->site_description = "A project of Global Voices, we seek to build a global anti-censorship network of bloggers and online activists dedicated to protecting freedom of expression and free access to information online.";
+	$gv->site_description = "A global anti-censorship network of bloggers and online activists dedicated to protecting freedom of expression and free access to information online.";
 	
 	/**
 	 * Sponsors definition to be used by gv_get_sponsors()
