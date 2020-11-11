@@ -1058,7 +1058,7 @@ add_action('init', 'advox_define_term_migrations');
  */
 function advox_stats_reports($reports) {
 	// Load the theme reports
-	include_once __DIR__ . '/gv-stats-reports.php';
+	include_once __DIR__ . '/gv-advox-stats-reports.php';
 
 	// Merge in an array of our cutom reports for special category subsets
 	$reports = array_merge($reports, array(
