@@ -7,8 +7,6 @@
  */
 
 if (is_object($gv)) :
-	// Special map directory for gmapez
-	$gv->dir['map'] = "/wp-content/map/";
 
 	/**
 	 * Define an image to show in the header.
