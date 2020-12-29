@@ -219,27 +219,12 @@ if (is_object($gv)) :
 	add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
 
 	/**
-	 * Filter gv_post_archive_hide_dates to hide them on hoempage
-	 * @param type $limit
-	 * @param type $args
-	 * @return int
-	 */
-	function gv_advox_gv_post_archive_hide_dates($hide_dates) {
-		if (is_home() AND !is_paged())
-			return true;
-		
-		return $hide_dates;
-	}
-	add_filter('gv_post_archive_hide_dates', 'gv_advox_gv_post_archive_hide_dates', 10);
-	
-	/**
 	 * Filter how recently you must have posted to be considered active
 	 */
 	function gv_advox_filter_active_days_ago($days_ago) {
 		return 365;
 	}
 	add_filter('gv_active_days_ago', 'gv_advox_filter_active_days_ago');
-		
 	
 	/**
 	 * Define special categories as content types and the conditions in which to segregate them
