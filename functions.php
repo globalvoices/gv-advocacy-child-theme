@@ -50,7 +50,7 @@ if (is_object($gv)) :
 	 * @return string desired directory (no trailing /)
 	 */
 	function gvadvocacy_theme_gv_favicon_dir($dir) {
-		return 'https://s3.amazonaws.com/static.globalvoices/img/tmpl/favicon-advox';
+		return 'https://globalvoices.org/wp-content/gv-static/img/tmpl/favicon-advox';
 	}
 	add_filter('gv_favicon_dir', 'gvadvocacy_theme_gv_favicon_dir');
 	
