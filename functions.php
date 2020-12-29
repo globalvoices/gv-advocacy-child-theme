@@ -230,27 +230,6 @@ function gv_advox_register_taxonomies($param) {
 add_action('init', 'gv_advox_register_taxonomies');
 
 /**
- * Filter gv_display_post_terms limit so we only ever show 1 term
- * @param type $limit
- * @param type $args
- * @return int
- */
-function gv_news_filter_display_post_terms_limit($limit, $args) {
-	global $post;
-	
-	// Don't limit terms for a single post on it's own single screen
-	if (is_single() AND ($post->ID == get_queried_object_id()))
-		return;
-	
-	// Only set limit if we're on inline format
-	if ('inline' == $args['format'])
-		return 2;
-	
-	return $limit;
-}
-add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
-
-/**
  * Filter how recently you must have posted to be considered active
  */
 function gv_advox_filter_active_days_ago($days_ago) {
