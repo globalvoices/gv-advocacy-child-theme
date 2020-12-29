@@ -256,6 +256,8 @@ if (is_object($gv)) :
 			),
 	);
 
+endif; // is_object($gv)
+
 /**
  * Filter the default stats report with specific news theme reports.
  *
@@ -341,7 +343,3 @@ function advocacy_theme_register_stats_pages() {
 	endif;
 }
 add_action('init', 'advocacy_theme_register_stats_pages', 100);
-	
-endif; // is_object($gv)
-
-?>
