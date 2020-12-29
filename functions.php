@@ -108,123 +108,6 @@ if (is_object($gv)) :
 	 * @see gv_lingua::reply_to_ping()
 	 */
 	$gv->lingua_site_categories[] = 'gv-advocacy';
-
-	/**
-	 * Register "public taxonomies" for gv_taxonomies system to display automatically on posts
-	 * 
-	 * Should completely replace old backbone/taxonomy_priority system eventually
-	 */
-	function gv_advox_register_taxonomies($param) {
-		
-		/**
-		 * TEMPORARY: Exit if world doesn't exist to avoid choking initially.
-		 */
-		if (!gv_slug2cat('world', false, false)) 
-			return;
-
-		// Unregister defaults as they aren't useful for this site
-		gv_unregister_public_taxonomy('category');
-		
-		/**
-		 * ADVOX IS ALLOWED TAGS
-		 * Don't unregister tags AND filter gv_hide_tags_ui as false so the metabox isn't CSS-hidden
-		 */
-//		gv_unregister_public_taxonomy('post_tag');
-		add_filter('gv_hide_tags_ui', '__return_false');
-
-		$world_category_id = gv_slug2cat('world');
-	
-		// Register TOPICS as terms with parent TOPICS
-		$topics_category_id = gv_slug2cat('topics');
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'topics',
-			'taxonomy' => 'category',
-			'parent' => $topics_category_id,
-			'labels' => array(
-				'name' => _lingua('topics'),
-				'siblings_label' => _lingua('other_topics'),				
-			),	
-		));
-		
-		// Register COUNTRIES as terms with grandparent WORLD
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'countries',
-			'taxonomy' => 'category',
-			'grandparent' => $world_category_id,
-			'labels' => array(
-				'name' => _lingua('countries'),
-				'siblings_label' => _lingua('countries_in_category_name'),
-			),			
-		));
-
-		// Register REGIONS as terms with parent WORLD
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'regions',
-			'taxonomy' => 'category',
-			'parent' => $world_category_id,
-			'labels' => array(
-				'name' => _lingua('regions'),
-				'siblings_label' => _lingua('other_regions'),
-				'children_label' => _lingua('countries_in_category_name'),
-			),
-			'show_siblings' => false,
-		));
-
-		// Register SPECIAL as terms with parent SPECIAL
-		$special_category_id = gv_slug2cat('special');
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'special',
-			'taxonomy' => 'category',
-			'parent' => $special_category_id,
-			'labels' => array(
-				'name' => _lingua('special_topics'), 
-				'siblings_label' => _lingua('other_special_topics'), 				
-			),
-//			'public' => true,
-		));
-		
-		// Register TYPE as terms with parent TYPE
-		$type_category_id = gv_slug2cat('type');
-		gv_register_public_taxonomy('category', array(
-			'subtaxonomy_slug' => 'type',
-			'taxonomy' => 'category',
-			'parent' => $type_category_id,
-			'labels' => array(
-				'name' => _lingua('type'), 
-			),
-			'public' => false,
-		));
-	}
-	add_action('init', 'gv_advox_register_taxonomies');
-
-	/**
-	 * Filter gv_display_post_terms limit so we only ever show 1 term
-	 * @param type $limit
-	 * @param type $args
-	 * @return int
-	 */
-	function gv_news_filter_display_post_terms_limit($limit, $args) {
-		global $post;
-		
-		// Don't limit terms for a single post on it's own single screen
-		if (is_single() AND ($post->ID == get_queried_object_id()))
-			return;
-		
-		// Only set limit if we're on inline format
-		if ('inline' == $args['format'])
-			return 1;
-		
-		return $limit;
-	}
-	add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
-
-	/**
-	 * Filter how recently you must have posted to be considered active
-	 */
-	function gv_advox_filter_active_days_ago($days_ago) {
-		return 365;
-	}
-	add_filter('gv_active_days_ago', 'gv_advox_filter_active_days_ago');
 	
 	/**
 	 * Define special categories as content types and the conditions in which to segregate them
@@ -257,6 +140,123 @@ if (is_object($gv)) :
 	);
 
 endif; // is_object($gv)
+
+/**
+ * Register "public taxonomies" for gv_taxonomies system to display automatically on posts
+ * 
+ * Should completely replace old backbone/taxonomy_priority system eventually
+ */
+function gv_advox_register_taxonomies($param) {
+	
+	/**
+	 * TEMPORARY: Exit if world doesn't exist to avoid choking initially.
+	 */
+	if (!gv_slug2cat('world', false, false)) 
+		return;
+
+	// Unregister defaults as they aren't useful for this site
+	gv_unregister_public_taxonomy('category');
+	
+	/**
+	 * ADVOX IS ALLOWED TAGS
+	 * Don't unregister tags AND filter gv_hide_tags_ui as false so the metabox isn't CSS-hidden
+	 */
+//		gv_unregister_public_taxonomy('post_tag');
+	add_filter('gv_hide_tags_ui', '__return_false');
+
+	$world_category_id = gv_slug2cat('world');
+
+	// Register COUNTRIES as terms with grandparent WORLD
+	gv_register_public_taxonomy('category', array(
+		'subtaxonomy_slug' => 'countries',
+		'taxonomy' => 'category',
+		'grandparent' => $world_category_id,
+		'labels' => array(
+			'name' => _lingua('countries'),
+			'siblings_label' => _lingua('countries_in_category_name'),
+		),			
+	));
+
+	// Register REGIONS as terms with parent WORLD
+	gv_register_public_taxonomy('category', array(
+		'subtaxonomy_slug' => 'regions',
+		'taxonomy' => 'category',
+		'parent' => $world_category_id,
+		'labels' => array(
+			'name' => _lingua('regions'),
+			'siblings_label' => _lingua('other_regions'),
+			'children_label' => _lingua('countries_in_category_name'),
+		),
+		'show_siblings' => false,
+	));
+
+	// Register TOPICS as terms with parent TOPICS
+	$topics_category_id = gv_slug2cat('topics');
+	gv_register_public_taxonomy('category', array(
+		'subtaxonomy_slug' => 'topics',
+		'taxonomy' => 'category',
+		'parent' => $topics_category_id,
+		'labels' => array(
+			'name' => _lingua('topics'),
+			'siblings_label' => _lingua('other_topics'),				
+		),	
+	));
+
+	// Register SPECIAL as terms with parent SPECIAL
+	$special_category_id = gv_slug2cat('special');
+	gv_register_public_taxonomy('category', array(
+		'subtaxonomy_slug' => 'special',
+		'taxonomy' => 'category',
+		'parent' => $special_category_id,
+		'labels' => array(
+			'name' => _lingua('special_topics'), 
+			'siblings_label' => _lingua('other_special_topics'), 				
+		),
+//			'public' => true,
+	));
+	
+	// Register TYPE as terms with parent TYPE
+	$type_category_id = gv_slug2cat('type');
+	gv_register_public_taxonomy('category', array(
+		'subtaxonomy_slug' => 'type',
+		'taxonomy' => 'category',
+		'parent' => $type_category_id,
+		'labels' => array(
+			'name' => _lingua('type'), 
+		),
+		'public' => false,
+	));
+}
+add_action('init', 'gv_advox_register_taxonomies');
+
+/**
+ * Filter gv_display_post_terms limit so we only ever show 1 term
+ * @param type $limit
+ * @param type $args
+ * @return int
+ */
+function gv_news_filter_display_post_terms_limit($limit, $args) {
+	global $post;
+	
+	// Don't limit terms for a single post on it's own single screen
+	if (is_single() AND ($post->ID == get_queried_object_id()))
+		return;
+	
+	// Only set limit if we're on inline format
+	if ('inline' == $args['format'])
+		return 2;
+	
+	return $limit;
+}
+add_filter('gv_display_post_terms_limit', 'gv_news_filter_display_post_terms_limit', 10, 2);
+
+/**
+ * Filter how recently you must have posted to be considered active
+ */
+function gv_advox_filter_active_days_ago($days_ago) {
+	return 365;
+}
+add_filter('gv_active_days_ago', 'gv_advox_filter_active_days_ago');
 
 /**
  * Filter the default stats report with specific news theme reports.
