@@ -129,15 +129,15 @@ if (is_object($gv)) :
 	/**
 	 * Sponsors definition to be used by gv_get_sponsors()
 	 */
-	$gv->sponsors = array(
-		'hivos' => array(
-			"name" => "Hivos",
-			"slug" => "hivos",
-			"description" => 'Hivos, the Humanist Institute for Development Cooperation',
-			"url" => "http://www.hivos.org/",
-			"status" => 'featured',
-			),
-	);
+	// $gv->sponsors = array(
+	// 	'hivos' => array(
+	// 		"name" => "Hivos",
+	// 		"slug" => "hivos",
+	// 		"description" => 'Hivos, the Humanist Institute for Development Cooperation',
+	// 		"url" => "http://www.hivos.org/",
+	// 		"status" => 'featured',
+	// 		),
+	// );
 
 endif; // is_object($gv)
 
