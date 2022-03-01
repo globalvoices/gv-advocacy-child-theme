@@ -335,9 +335,9 @@ function advox_stats_reports($reports) {
 
 	// Merge in an array of our cutom reports for special category subsets
 	$reports = array_merge($reports, array(
-		'gv_stats_report_countries',
-		'gv_stats_report_regions',
-		'gv_stats_report_topics',
+		'gv_stats_report_country_category_post_counts',
+		'gv_stats_report_region_category_post_counts',
+		'gv_stats_report_topic_category_post_counts',
 	));
 
 	/**
