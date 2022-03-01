@@ -103,11 +103,7 @@ a:hover,
 .warning a:hover {
 	color: #d90202;
 	}
-#LIGHT-RED-BACKGROUND,
-a .post-thumbnail:hover {
-	background-color: #fcb7b7;
-	border-color: #d90202; 
-	}
+
 .header-container .site-search input[type='submit'] {
 	background-color: #800205;
 }
