@@ -10,24 +10,12 @@ Template: gv-theme
 */
 
 #WHITE-TEXT,
-.header-container a,
-.header-container a:hover,
-.header-mission-statement,
-.header-tools .menu-toggle,
-.button a:hover,
+.header-nav-bar-container .header-nav-bar a,
+.header-nav-bar-container .header-nav-bar a:active,
+.header-nav-bar-container .header-nav-bar a:hover,
+.a11y-dialog-open,
 .white-text {
-	color: #fff; 
-}
-#WHITE-GLOWING-TEXT,
-.header-tools .menu-toggle:hover,
-.white-glowing-text {
 	color: #fff;
-	text-shadow: 0px 0px 2px #FFF;
-}
-#DARK-GREY-TEXT,
-.header-container .toggle-menu-content,
-.dark-grey-text {
-	color: #333;
 }
 #MEDIUM-RED-GRADIENT,
 .header-container,
@@ -36,9 +24,7 @@ Template: gv-theme
 	background: #D10006;
 }
 #MEDIUM-RED-HIGHLIGHT-BORDER,
-.header-menu li,
-.header-menu-container input,
-.header-tools .menu-toggle,
+.header-nav-bar li,
 .medium-red-hightlight-border {
 	/* Lightest shade of green from medium-green-gradient*/
 	border-color: #BC0005;
@@ -57,7 +43,7 @@ Template: gv-theme
 #NO-TEXT-SHADOW,
 .header-container .menu-opened .toggle-menu-heading,
 .header-container .toggle-menu-content,
-.header-container .active-item a,
+.header-container .current-menu-item a,
 .no-text-shadow {
 	text-shadow: none;
 }
@@ -72,9 +58,8 @@ a,
 .screen-title a:hover,
 .taxonomy-list a:hover,
 .taxonomy-tabs-container .term-union-link a,
-.post-description a:hover,
+.post-date a:hover,
 .meta-term-subterms .active-term a,
-.share-links-icons .icon:hover,
 #comments #respond #commentform a:hover,
 #page-navigation a:hover,
 
@@ -103,17 +88,10 @@ a:hover,
 .warning a:hover {
 	color: #d90202;
 	}
-
-.header-container .site-search input[type='submit'] {
-	background-color: #800205;
-}
-.header-container .site-search input {
-	outline: 1px solid #800205;
-}
 .site-title {
 	width: 300px;
 	max-width: 300px;
-}	
+}
 
 @media
 only screen and (max-width: 1008px) {
