@@ -105,7 +105,7 @@ if (is_object($gv)) :
 
 	/**
 	 * Define Categories to be inserted into post data before returning content for translation during fetch
-	 * @see gv_lingua::reply_to_ping()
+	 * @see GV_Lingua_Manager->reply_to_ping()
 	 */
 	$gv->lingua_site_categories[] = 'gv-advocacy';
 	
@@ -288,11 +288,11 @@ function gv_advox_register_custom_taxonomies() {
 	 * Reference:
 	 * 	return apply_filters('gv_taxonomy_whitelist', array('category', 'post_tag'));
 	 */
-	function gv_whitelist_special_taxonomy($taxonomies) {
+	function gv_filter_gv_taxonomy_whitelist_to_add_gv_special($taxonomies) {
 		$taxonomies[] = 'gv_special';
 		return $taxonomies;
 	}
-	add_filter('gv_taxonomy_whitelist', 'gv_whitelist_special_taxonomy');
+	add_filter('gv_taxonomy_whitelist', 'gv_filter_gv_taxonomy_whitelist_to_add_gv_special');
 
 	/**
 	 * Always disable featured posts for gv_special taxonomy archives
