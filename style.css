@@ -10,10 +10,10 @@ Template: gv-theme
 */
 
 #WHITE-TEXT,
+.header-container .a11y-dialog-open,
 .header-nav-bar-container .header-nav-bar a,
 .header-nav-bar-container .header-nav-bar a:active,
 .header-nav-bar-container .header-nav-bar a:hover,
-.a11y-dialog-open,
 .white-text {
 	color: #fff;
 }
@@ -29,42 +29,17 @@ Template: gv-theme
 	/* Lightest shade of green from medium-green-gradient*/
 	border-color: #BC0005;
 }
-#TEXT-SHADOW-MEDIUM-RED,
-.header-container,
-.text-shadow-medium-red {
-	color: #fff;
-	/* text-shadow: 1px 1px 2px #A20005; */
-	}
-#TEXT-SHADOW-MEDIUM-GREY-BACKGROUND,
-.text-shadow-medium-grey-background {
-	color: #333;
-	text-shadow: none;
-	}
-#NO-TEXT-SHADOW,
-.header-container .menu-opened .toggle-menu-heading,
-.header-container .toggle-menu-content,
-.header-container .current-menu-item a,
-.no-text-shadow {
-	text-shadow: none;
-}
-
 #DARK-RED-TEXT,
 a,
 h3 a,
 a,
-.menu-opened .menu-toggle,
-.menu-toggle:hover,
-.taxonomy-list-header-opened .taxonomy-list-toggle,
 .screen-title a:hover,
 .taxonomy-list a:hover,
-.taxonomy-tabs-container .term-union-link a,
 .post-date a:hover,
 .meta-term-subterms .active-term a,
 #comments #respond #commentform a:hover,
-#page-navigation a:hover,
-
-.header-container .toggle-menu-content a,
-.header-container .menu-opened .menu-toggle {
+#page-navigation a:hover
+.dark-red-text {
 	color: #9d0106;
 	}
 #MEDIUM-RED-TEXT,
@@ -75,18 +50,8 @@ a:hover,
 #comments .edit a,
 #cancel-comment-reply-link,
 .warning a ,
-
-.header-container .toggle-menu-content a:hover {
+.medium-red-text {
 	color: #c80005;
-	}
-
-#LIGHT-RED-TEXT,
-.error,
-.edit a:hover,
-#comments .edit a:hover,
-#cancel-comment-reply-link:hover,
-.warning a:hover {
-	color: #d90202;
 	}
 .site-title {
 	width: 300px;

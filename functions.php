@@ -174,7 +174,7 @@ function gv_advox_register_taxonomies($param) {
 		'labels' => array(
 			'name' => _lingua('countries'),
 			'siblings_label' => _lingua('countries_in_category_name'),
-		),			
+		),
 	));
 
 	// Register REGIONS as terms with parent WORLD
