@@ -18,7 +18,7 @@ if (is_object($gv)) :
 	 * Enable Featured posts - Tells GV Query Manipulation to prefetch featured posts before main loop and exclude their ids.
 	 * @see gv_load_featured_posts()
 	 */
-	$gv->use_featured_posts = true;	
+	$gv->use_featured_posts = true;
 	
 	/**
 	 * Hide tags interface completely to avoid people using them
@@ -177,7 +177,6 @@ function gv_advox_register_taxonomies($param) {
 			'siblings_label' => _lingua('other_regions'),
 			'children_label' => _lingua('countries_in_category_name'),
 		),
-		'show_siblings' => false,
 	));
 
 	// Register TOPICS as terms with parent TOPICS
