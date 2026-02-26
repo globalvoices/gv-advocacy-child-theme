@@ -96,7 +96,7 @@ if (is_object($gv)) :
 	 */
 	function gvadvocacy_theme_gv_sd_logo($icon) {
 		return array(
-			'url' => 'http://s3.amazonaws.com/static.globalvoices/img/tmpl/advox-redbg-structureddata-60x219.png',
+			'url' => 'https://globalvoices.org/wp-content/gv-static/img/tmpl/advox-redbg-structureddata-60x219.png',
 			'height' => 60,
 			'width' => 219,
 		);
