@@ -284,6 +284,20 @@ function gv_advox_register_custom_taxonomies() {
 	add_filter('gv_taxonomy_whitelist', 'gv_filter_gv_taxonomy_whitelist_to_add_gv_special');
 
 	/**
+	 * Add gv_special to taxonomies you can select in GV Posts List widget
+	 *
+	 * @param array $taxonomy_slugs
+	 * @return void
+	 */
+	function gv_filter_gv_posts_widget_taxonomies_to_add_gv_special(array $taxonomy_slugs) {
+		
+		$taxonomy_slugs[] = 'gv_special';
+
+		return $taxonomy_slugs;
+	}
+	add_filter('gv_posts_widget_taxonomies', 'gv_filter_gv_posts_widget_taxonomies_to_add_gv_special');
+
+	/**
 	 * Always disable featured posts for gv_special taxonomy archives
 	 * 
 	 * Filters `gv_load_featured_posts` which controls display of the featured posts 
