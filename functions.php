@@ -105,9 +105,9 @@ if (is_object($gv)) :
 
 	/**
 	 * Define Categories to be inserted into post data before returning content for translation during fetch
-	 * @see GV_Lingua_Manager->reply_to_ping()
+	 * @see GV_REST_Posts->generate_response()
 	 */
-	$gv->lingua_site_categories[] = 'gv-advocacy';
+	$gv->lingua_site_terms['category'] = 'gv-advocacy';
 
 	/**
 	 * Set a custom site description using a lingua string. To be used in social media sharing etc.
